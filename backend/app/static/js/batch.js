@@ -61,13 +61,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Set up image preview
-        const imageInput = taskItem.querySelector('.task-images');
+        const studentImageInput = taskItem.querySelector('.task-student-images');
+        const correctImageInput = taskItem.querySelector('.task-correct-image');
         const previewContainer = taskItem.querySelector('.task-images-preview');
 
-        imageInput.addEventListener('change', function() {
+        // Preview for student images
+        studentImageInput.addEventListener('change', function() {
+            // Clear previous previews
             previewContainer.innerHTML = '';
 
             if (this.files && this.files.length > 0) {
+                // Add a label for student solutions
+                const labelDiv = document.createElement('div');
+                labelDiv.className = 'col-12';
+                labelDiv.innerHTML = '<h6 class="text-muted">Решения учеников:</h6>';
+                previewContainer.appendChild(labelDiv);
+
+                // Add previews for each student solution
                 for (let i = 0; i < this.files.length; i++) {
                     const file = this.files[i];
                     const reader = new FileReader();
@@ -79,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const img = document.createElement('img');
                         img.src = e.target.result;
                         img.className = 'img-fluid';
-                        img.alt = `Решение ${i + 1}`;
+                        img.alt = `Решение ученика ${i + 1}`;
 
                         col.appendChild(img);
                         previewContainer.appendChild(col);
@@ -87,6 +97,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     reader.readAsDataURL(file);
                 }
+            }
+        });
+
+        // Preview for correct solution image
+        correctImageInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Check if there's already a correct solution preview
+                    const existingLabel = previewContainer.querySelector('.correct-solution-label');
+                    if (!existingLabel) {
+                        // Add a label for correct solution
+                        const labelDiv = document.createElement('div');
+                        labelDiv.className = 'col-12 correct-solution-label';
+                        labelDiv.innerHTML = '<h6 class="text-muted">Правильное решение:</h6>';
+
+                        // Insert at the beginning of the container
+                        if (previewContainer.firstChild) {
+                            previewContainer.insertBefore(labelDiv, previewContainer.firstChild);
+                        } else {
+                            previewContainer.appendChild(labelDiv);
+                        }
+
+                        // Add the image
+                        const col = document.createElement('div');
+                        col.className = 'col-4 col-md-3 col-lg-2 correct-solution-preview';
+
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.className = 'img-fluid';
+                        img.alt = 'Правильное решение';
+
+                        col.appendChild(img);
+                        previewContainer.insertBefore(col, previewContainer.querySelector('.correct-solution-label').nextSibling);
+                    } else {
+                        // Update existing preview
+                        const existingPreview = previewContainer.querySelector('.correct-solution-preview img');
+                        if (existingPreview) {
+                            existingPreview.src = e.target.result;
+                        }
+                    }
+                };
+
+                reader.readAsDataURL(this.files[0]);
             }
         });
 
@@ -128,9 +183,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         taskItems.forEach(item => {
             const taskType = item.querySelector('.task-type');
-            const taskImages = item.querySelector('.task-images');
+            const studentImages = item.querySelector('.task-student-images');
 
-            if (!taskType.value || taskImages.files.length === 0) {
+            if (!taskType.value || studentImages.files.length === 0) {
                 isValid = false;
             }
         });
@@ -142,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Get batch settings
         const modelId = document.getElementById('batch-model-id').value;
+        console.log('Using model ID:', modelId);
         const includeExamples = document.getElementById('batch-include-examples').checked;
         const promptVariant = document.getElementById('batch-prompt-variant').value;
         const temperature = document.getElementById('batch-temperature').value;
@@ -170,12 +226,15 @@ document.addEventListener('DOMContentLoaded', function() {
         for (const taskItem of taskItems) {
             const taskType = taskItem.querySelector('.task-type').value;
             const taskDescription = taskItem.querySelector('.task-description').value;
-            const taskImages = taskItem.querySelector('.task-images').files;
+            const taskImages = taskItem.querySelector('.task-student-images').files;
             const taskNumber = taskItem.querySelector('.task-number').textContent;
 
-            // Process each image for this task
+            // Get correct solution image if available
+            const correctImage = taskItem.querySelector('.task-correct-image').files[0];
+
+            // Process each student image for this task
             for (let i = 0; i < taskImages.length; i++) {
-                const image = taskImages[i];
+                const studentImage = taskImages[i];
 
                 try {
                     // Create form data
@@ -183,7 +242,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     formData.append('task_type', taskType);
                     formData.append('task_description', taskDescription);
                     formData.append('model_id', modelId);
-                    formData.append('solution_image', image);
+                    formData.append('student_solution_image', studentImage);
+
+                    // Add correct solution image if available
+                    if (correctImage) {
+                        formData.append('correct_solution_image', correctImage);
+                    }
+
                     formData.append('include_examples', includeExamples);
 
                     if (promptVariant) {
@@ -231,24 +296,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to add a result to the results container
     function addResultToContainer(taskNumber, imageNumber, taskType, taskDescription, data) {
+        console.log('Received data for batch:', data);
+
         // Extract score from the result
         let score = 'Не определено';
         let scoreClass = '';
+        let explanation = '';
 
-        const scoreMatch = data.result.match(/Оценка:\s*(\d+)\s*балл/i);
-        if (scoreMatch && scoreMatch[1]) {
-            score = scoreMatch[1];
-            scoreClass = `score-${score}`;
+        // Check if result is an object with the expected structure
+        if (data.result && typeof data.result === 'object') {
+            // Use the score directly from the result object
+            if (typeof data.result.score === 'number') {
+                score = data.result.score.toString();
+                scoreClass = `score-${score}`;
+            }
+
+            // Get the explanation text
+            if (typeof data.result.explanation === 'string') {
+                explanation = data.result.explanation;
+            }
+        } else if (typeof data.result === 'string') {
+            // Fallback for string result (old format)
+            const scoreMatch = data.result.match(/Оценка:\s*(\d+)\s*балл/i);
+            if (scoreMatch && scoreMatch[1]) {
+                score = scoreMatch[1];
+                scoreClass = `score-${score}`;
+            }
+            explanation = data.result;
         }
 
         // Format the result with Markdown-like formatting
-        let formattedResult = data.result
+        let formattedResult = explanation
             .replace(/#{3}\s*(.*?)$/gm, '<h5>$1</h5>')  // ### headers
             .replace(/#{2}\s*(.*?)$/gm, '<h4>$1</h4>')  // ## headers
             .replace(/#{1}\s*(.*?)$/gm, '<h3>$1</h3>')  // # headers
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // bold
             .replace(/\*(.*?)\*/g, '<em>$1</em>')  // italic
             .split('\n').join('<br>');  // line breaks
+
+        // Get model ID and processing time
+        const modelId = data.model_id || data.model || 'Неизвестно';
+        const processingTime = data.result?.evaluation_time || data.processing_time || 0;
+        // Time is already in seconds, no need to divide by 1000
+        const processingTimeInSeconds = processingTime.toFixed(2);
 
         // Create result item
         const resultId = `result-${taskNumber}-${imageNumber}`;
@@ -273,8 +363,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     ` : ''}
 
                     <div class="mb-3">
-                        <span class="badge bg-primary">Модель: ${data.model}</span>
-                        <span class="badge bg-secondary">Время: ${(data.processing_time / 1000).toFixed(2)} сек</span>
+                        <span class="badge bg-primary">Модель: ${modelId}</span>
+                        <span class="badge bg-secondary">Время: ${processingTimeInSeconds} сек</span>
                     </div>
 
                     <div class="result-analysis">

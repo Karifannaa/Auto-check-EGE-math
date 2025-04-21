@@ -45,7 +45,7 @@ app.include_router(solutions.router, prefix=f"{settings.API_V1_STR}/solutions", 
 app.include_router(models.router, prefix=f"{settings.API_V1_STR}/models", tags=["models"])
 app.include_router(web.router, tags=["web"])
 
-# Root endpoint is now handled by the web router
+# Root endpoint is now handled by the web router module
 
 @app.get("/health")
 async def health_check():

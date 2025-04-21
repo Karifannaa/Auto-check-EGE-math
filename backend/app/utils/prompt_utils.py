@@ -33,7 +33,7 @@ class PromptGenerator:
         """Get template for Task 13 (trigonometric, logarithmic, or exponential equations).
 
         Args:
-            variant: Prompt variant to use ("basic", "detailed", or "with_examples")
+            variant: Prompt variant to use ("basic", "detailed", "with_examples", or "image_examples")
 
         Returns:
             Template string for the specified variant
@@ -219,9 +219,11 @@ class PromptGenerator:
 
         # For task_13, we have specialized prompts with variants
         if task_type == "task_13":
-            # If the variant includes examples and include_examples is True, use the with_examples variant
-            if include_examples and prompt_variant != "with_examples" and "with_examples" in AVAILABLE_PROMPT_VARIANTS[task_type]:
-                template = self._get_task_13_template("with_examples")
+            # If include_examples is True, use the image_examples variant
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS[task_type]:
+                template = self._get_task_13_template("image_examples")
+                # Set prompt_variant to image_examples to avoid adding examples twice
+                prompt_variant = "image_examples"
             else:
                 template = self._get_task_13_template(prompt_variant)
         else:
@@ -235,14 +237,18 @@ class PromptGenerator:
         prompt = template.format(task_description=task_description)
 
         # Add examples if requested and we're not already using a template with examples
-        if include_examples and examples and task_type != "task_13" and prompt_variant != "with_examples":
+        if include_examples and task_type != "task_13" and prompt_variant not in ["with_examples", "image_examples"]:
             examples_text = "\n\nПримеры оценивания:\n"
-            for i, example in enumerate(examples, 1):
-                examples_text += f"\nПример {i}:\n"
-                examples_text += f"Задача: {example.get('task', '')}\n"
-                examples_text += f"Решение ученика: {example.get('solution', '')}\n"
-                examples_text += f"Оценка: {example.get('score', '')} баллов\n"
-                examples_text += f"Обоснование: {example.get('explanation', '')}\n"
+            if examples:
+                for i, example in enumerate(examples, 1):
+                    examples_text += f"\nПример {i}:\n"
+                    examples_text += f"Задача: {example.get('task', '')}\n"
+                    examples_text += f"Решение ученика: {example.get('solution', '')}\n"
+                    examples_text += f"Оценка: {example.get('score', '')} баллов\n"
+                    examples_text += f"Обоснование: {example.get('explanation', '')}\n"
+            else:
+                # If no examples provided but include_examples is True, add a note
+                examples_text += "\nПримеры будут предоставлены в виде изображений.\n"
 
             prompt += examples_text
 
@@ -293,18 +299,20 @@ class PromptGenerator:
         self,
         task_type: str,
         task_description: str,
-        image_data: Dict[str, Any],
+        student_solution_image: Dict[str, Any],
+        correct_solution_image: Optional[Dict[str, Any]] = None,
         include_examples: bool = False,
         examples: Optional[List[Dict[str, Any]]] = None,
         prompt_variant: Optional[str] = None
     ) -> List[Dict[str, Any]]:
         """
-        Create a list of messages for the API, including an image of the solution.
+        Create a list of messages for the API, including images of the solution.
 
         Args:
             task_type: Type of task (e.g., "task_13", "task_17")
             task_description: Description of the task
-            image_data: Image data in the format expected by the API
+            student_solution_image: Image data of student's solution in the format expected by the API
+            correct_solution_image: Optional image data of correct solution in the format expected by the API
             include_examples: Whether to include examples in the prompt
             examples: List of example solutions with evaluations
             prompt_variant: Specific prompt variant to use (e.g., "basic", "detailed")
@@ -324,15 +332,72 @@ class PromptGenerator:
             prompt_variant=prompt_variant
         )
 
+        # Create content list with prompt and images
+        content = [{"type": "text", "text": prompt}]
+
+        # Add example images if requested and task_type is task_13 and we're using the image_examples prompt
+        if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
+            import os
+            from app.utils.image_utils import prepare_image_for_api
+
+            # Path to examples directory
+            examples_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "examples", "13")
+
+            if os.path.exists(examples_dir):
+                # Add a header for examples
+                content.append({"type": "text", "text": "\n\n## Примеры решений и их оценок:\n\n"})
+
+                # Get subdirectories (each containing an example)
+                example_dirs = [d for d in os.listdir(examples_dir) if os.path.isdir(os.path.join(examples_dir, d))]
+
+                for i, example_dir in enumerate(example_dirs, 1):
+                    dir_path = os.path.join(examples_dir, example_dir)
+                    image_files = [f for f in os.listdir(dir_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
+
+                    if image_files:
+                        # Add example header
+                        content.append({"type": "text", "text": f"### Пример {i}:\n"})
+
+                        # Add each image in the example directory
+                        for img_file in image_files:
+                            try:
+                                img_path = os.path.join(dir_path, img_file)
+                                with open(img_path, "rb") as f:
+                                    img_data = f.read()
+
+                                # Prepare image for API
+                                from PIL import Image
+                                import io
+                                img = Image.open(io.BytesIO(img_data))
+                                example_image = prepare_image_for_api(img)
+                                content.append(example_image)
+                                content.append({"type": "text", "text": "\n"})
+                            except Exception as e:
+                                content.append({"type": "text", "text": f"[Ошибка загрузки примера: {str(e)}]\n"})
+
+        # Add correct solution image if provided
+        if correct_solution_image:
+            # Add a separator after examples if they were included
+            if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
+                content.append({"type": "text", "text": "\n\n## Задание для оценки:\n\n"})
+
+            content.append(correct_solution_image)
+            # Add a separator text between images
+            content.append({"type": "text", "text": "\n\nВыше представлено условие задачи и правильное решение. Ниже представлено решение ученика, которое нужно оценить:\n\n"})
+        else:
+            # If no correct solution, but we had examples, add a separator
+            if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
+                content.append({"type": "text", "text": "\n\n## Решение ученика для оценки:\n\n"})
+
+        # Add student solution image
+        content.append(student_solution_image)
+
         # Create the messages list
         messages = [
             {"role": "system", "content": system_message},
             {
                 "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt},
-                    image_data
-                ]
+                "content": content
             }
         ]
 

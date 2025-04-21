@@ -59,7 +59,8 @@ async def evaluate_solution(
     task_type: str = Form(...),
     task_description: str = Form(""),
     model_id: str = Form(...),
-    solution_image: UploadFile = File(...),
+    student_solution_image: UploadFile = File(...),
+    correct_solution_image: Optional[UploadFile] = File(None),
     include_examples: bool = Form(False),
     prompt_variant: Optional[str] = Form(None),
     temperature: float = Form(0.7),
@@ -83,13 +84,20 @@ async def evaluate_solution(
     Returns:
         Evaluation result
     """
+    # Log request details for debugging
+    logger.info(f"Received evaluation request - Task type: {task_type}, Model ID: {model_id}")
+    logger.info(f"Student image filename: {student_solution_image.filename if student_solution_image else 'None'}")
+    logger.info(f"Correct solution image: {correct_solution_image.filename if correct_solution_image else 'None'}")
+
     # Validate task type
     if task_type not in settings.TASK_TYPES:
+        logger.error(f"Invalid task type: {task_type}")
         raise HTTPException(status_code=400, detail=f"Invalid task type: {task_type}")
 
     # Validate model ID and check if it supports image processing
     if model_id in settings.REASONING_MODELS:
         model_name = settings.REASONING_MODELS[model_id]
+        logger.info(f"Using reasoning model: {model_name}")
     elif model_id in settings.NON_REASONING_MODELS:
         # Check if the non-reasoning model supports image processing
         # This is a simplified check - in a real system, you'd want a more robust way to determine this
@@ -98,35 +106,54 @@ async def evaluate_solution(
             "gemini-1.5-flash", "qwen-2.5-vl-32b", "phi-4-multimodal"
         ]
         if model_id not in image_capable_models:
+            logger.error(f"Model {model_id} does not support image processing")
             raise HTTPException(
                 status_code=400,
                 detail=f"Model {model_id} does not support image processing. Please choose a reasoning model or an image-capable non-reasoning model."
             )
         model_name = settings.NON_REASONING_MODELS[model_id]
+        logger.info(f"Using non-reasoning model: {model_name}")
     else:
+        logger.error(f"Invalid model ID: {model_id}")
         raise HTTPException(status_code=400, detail=f"Invalid model ID: {model_id}")
 
     try:
-        # Read and process the image
-        image_content = await solution_image.read()
+        # Read and process the student solution image
+        student_image_content = await student_solution_image.read()
         try:
-            image = Image.open(io.BytesIO(image_content))
+            student_image = Image.open(io.BytesIO(student_image_content))
         except UnidentifiedImageError:
-            raise HTTPException(status_code=400, detail="Invalid image format")
+            raise HTTPException(status_code=400, detail="Invalid student solution image format")
 
-        # Prepare the image for the API
-        image_data = prepare_image_for_api(
-            image,
+        # Prepare the student solution image for the API
+        student_image_data = prepare_image_for_api(
+            student_image,
             resize=True,
             enhance=settings.ENHANCE_IMAGES,
             max_size=settings.MAX_IMAGE_SIZE
         )
 
+        # Process correct solution image if provided
+        correct_image_data = None
+        if correct_solution_image:
+            correct_image_content = await correct_solution_image.read()
+            try:
+                correct_image = Image.open(io.BytesIO(correct_image_content))
+                correct_image_data = prepare_image_for_api(
+                    correct_image,
+                    resize=True,
+                    enhance=settings.ENHANCE_IMAGES,
+                    max_size=settings.MAX_IMAGE_SIZE
+                )
+            except UnidentifiedImageError:
+                raise HTTPException(status_code=400, detail="Invalid correct solution image format")
+
         # Create messages for the API
         messages = prompt_generator.create_messages_with_image(
             task_type=task_type,
             task_description=task_description,
-            image_data=image_data,
+            student_solution_image=student_image_data,
+            correct_solution_image=correct_image_data,
             include_examples=include_examples,
             examples=None,  # We're not including examples for now
             prompt_variant=prompt_variant
@@ -155,20 +182,87 @@ async def evaluate_solution(
         completion_tokens = usage.get("completion_tokens")
         total_tokens = usage.get("total_tokens")
 
-        # Parse the score from the result
-        # This is a simple implementation - in a real system, you'd want more robust parsing
+        # Parse the score from the result with improved robustness
         score = 0
-        for line in result_text.split("\n"):
-            if "итоговая оценка" in line.lower() or "итоговый балл" in line.lower():
-                # Try to extract the score
-                try:
-                    # Look for digits in the line
-                    digits = [int(s) for s in line.split() if s.isdigit()]
-                    if digits:
-                        score = digits[0]
+
+        try:
+            import re
+
+            # First approach: Look for explicit score sections
+            score_sections = [
+                r'итоговая оценка[\s\S]*?(\d+)\s*балл',
+                r'оценка[\s\S]*?(\d+)\s*балл',
+                r'\[оценка[\s\S]*?(\d+)\s*балл',
+                r'итоговый балл[\s\S]*?(\d+)',
+                r'итоговая оценка[\s\S]*?(\d+)',
+                r'оценка:\s*(\d+)',
+                r'выставляется\s*(\d+)\s*балл'
+            ]
+
+            for pattern in score_sections:
+                matches = re.findall(pattern, result_text.lower())
+                if matches:
+                    score = int(matches[-1])  # Use the last match as it's likely the final score
+                    logger.info(f"Found score {score} using pattern: {pattern}")
+                    break
+
+            # Second approach: Look for lines with "оценка" and extract digits
+            if score == 0:
+                for line in result_text.split("\n"):
+                    if "оценка" in line.lower() or "балл" in line.lower():
+                        # Extract all digits from the line
+                        digits = [int(s) for s in re.findall(r'\d+', line)]
+                        if digits:
+                            score = digits[-1]  # Use the last digit as the score
+                            logger.info(f"Found score {score} from line: {line}")
+                            break
+
+            # Third approach: Look for specific formats in the entire text
+            if score == 0:
+                # Look for patterns like "1 балл" or "2 балла" in the explanation
+                score_patterns = [
+                    r'(\d+)\s*балл',  # "2 балла"
+                    r'оценка\s*[:-]\s*(\d+)',  # "Оценка: 2"
+                    r'\[(\d+)\s*балл',  # "[2 балла"
+                    r'\[оценка\s*[:-]\s*(\d+)\]'  # "[Оценка: 2]"
+                ]
+
+                for pattern in score_patterns:
+                    matches = re.findall(pattern, result_text.lower())
+                    if matches:
+                        score = int(matches[-1])
+                        logger.info(f"Found score {score} using pattern: {pattern}")
                         break
-                except Exception as e:
-                    logger.warning(f"Failed to extract score from line: {line}, error: {str(e)}")
+
+            # Fourth approach: Most aggressive - find any number after "оценка"
+            if score == 0:
+                # Find any occurrence of "оценка" followed by a number within 30 characters
+                score_sections = re.findall(r'оценка.{1,30}?(\d+)', result_text.lower())
+                if score_sections:
+                    score = int(score_sections[-1])
+                    logger.info(f"Found score {score} using aggressive approach")
+
+            # Fifth approach: Check for specific score mentions in the text
+            if score == 0:
+                if "2 балла" in result_text.lower() or "два балла" in result_text.lower():
+                    score = 2
+                    logger.info("Found score 2 from direct text mention")
+                elif "1 балл" in result_text.lower() or "один балл" in result_text.lower():
+                    score = 1
+                    logger.info("Found score 1 from direct text mention")
+                elif "0 баллов" in result_text.lower() or "ноль баллов" in result_text.lower():
+                    score = 0
+                    logger.info("Found score 0 from direct text mention")
+
+            # Validate the score is within expected range for task 13
+            if task_type == "task_13" and score > 2:
+                logger.warning(f"Score {score} exceeds maximum of 2 for task_13, capping at 2")
+                score = 2
+
+        except Exception as e:
+            logger.error(f"Error extracting score: {str(e)}")
+            # Default to 0 if we couldn't extract a score
+            score = 0
 
         # Create the evaluation result
         evaluation_result = EvaluationResult(
@@ -211,4 +305,7 @@ async def evaluate_solution(
         raise HTTPException(status_code=422, detail=str(e))
     except Exception as e:
         logger.error(f"Unexpected error: {str(e)}")
+        logger.error(f"Error details: {type(e).__name__}, {str(e)}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
         raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")

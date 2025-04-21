@@ -50,12 +50,12 @@
                         <option value="" selected disabled>Выберите модель</option>
                         <optgroup label="Модели с рассуждением">
                             {% for model_id, model_name in reasoning_models.items() %}
-                                <option value="{{ model_name }}">{{ model_id }}</option>
+                                <option value="{{ model_id }}">{{ model_id }}</option>
                             {% endfor %}
                         </optgroup>
                         <optgroup label="Обычные модели">
                             {% for model_id, model_name in non_reasoning_models.items() %}
-                                <option value="{{ model_name }}">{{ model_id }}</option>
+                                <option value="{{ model_id }}">{{ model_id }}</option>
                             {% endfor %}
                         </optgroup>
                     </select>
@@ -150,9 +150,15 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Изображения с решениями</label>
-                    <input class="form-control task-images" type="file" accept="image/*" multiple required>
-                    <div class="form-text">Можно загрузить несколько изображений с решениями.</div>
+                    <label class="form-label">Изображение с условием и правильным решением</label>
+                    <input class="form-control task-correct-image" type="file" accept="image/*">
+                    <div class="form-text">Загрузите изображение с условием и правильным решением (необязательно).</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Изображения с решениями учеников</label>
+                    <input class="form-control task-student-images" type="file" accept="image/*" multiple required>
+                    <div class="form-text">Можно загрузить несколько изображений с решениями учеников.</div>
                 </div>
 
                 <div class="task-images-preview mt-3 row g-2">
