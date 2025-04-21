@@ -1,0 +1,110 @@
+/* Main styles for the EGE Math Solution Checker */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+#image-preview {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#result-content {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    white-space: pre-wrap;
+}
+
+.task-item {
+    border-left: 4px solid #0d6efd;
+}
+
+.task-images-preview img {
+    object-fit: cover;
+    height: 100px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.task-images-preview img:hover {
+    transform: scale(1.05);
+}
+
+.result-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.score-0 {
+    color: #dc3545;
+}
+
+.score-1 {
+    color: #fd7e14;
+}
+
+.score-2 {
+    color: #198754;
+}
+
+.score-3 {
+    color: #198754;
+}
+
+/* Loading animation */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+}

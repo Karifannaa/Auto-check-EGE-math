@@ -228,7 +228,10 @@ class PromptGenerator:
             # For other task types, use the standard template
             template = self.templates[task_type]
 
-        # Format with task description
+        # Format with task description (use default text if empty)
+        if not task_description.strip():
+            task_description = "Изображение содержит условие задачи и решение ученика."
+
         prompt = template.format(task_description=task_description)
 
         # Add examples if requested and we're not already using a template with examples

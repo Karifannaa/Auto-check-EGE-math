@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пакетная проверка решений ЕГЭ по математике</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Проверка решений ЕГЭ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Проверка решения</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/batch">Пакетная проверка</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Пакетная проверка решений задач ЕГЭ</h1>
+
+        <div class="alert alert-info">
+            <h5>Инструкция по использованию</h5>
+            <p>Для пакетной проверки решений:</p>
+            <ol>
+                <li>Выберите модель для проверки</li>
+                <li>Добавьте задачи, указав тип, условие и загрузив изображения с решениями</li>
+                <li>Нажмите "Запустить проверку" для обработки всех задач</li>
+            </ol>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Настройки пакетной проверки</h5>
+
+                <div class="mb-3">
+                    <label for="batch-model-id" class="form-label">Модель для проверки</label>
+                    <select class="form-select" id="batch-model-id" required>
+                        <option value="" selected disabled>Выберите модель</option>
+                        <optgroup label="Модели с рассуждением">
+                            {% for model_id, model_name in reasoning_models.items() %}
+                                <option value="{{ model_name }}">{{ model_id }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Обычные модели">
+                            {% for model_id, model_name in non_reasoning_models.items() %}
+                                <option value="{{ model_name }}">{{ model_id }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="batch-include-examples">
+                        <label class="form-check-label" for="batch-include-examples">
+                            Включить примеры в промпт
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="batch-prompt-variant" class="form-label">Вариант промпта</label>
+                    <select class="form-select" id="batch-prompt-variant">
+                        <option value="" selected>По умолчанию</option>
+                        <option value="basic">Базовый</option>
+                        <option value="detailed">Детальный</option>
+                        <option value="with_examples">С примерами</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="batch-temperature" class="form-label">Температура (0.0 - 1.0)</label>
+                    <input type="range" class="form-range" id="batch-temperature" min="0" max="1" step="0.1" value="0.7">
+                    <div class="d-flex justify-content-between">
+                        <small>Более точно</small>
+                        <small id="batch-temperature-value">0.7</small>
+                        <small>Более творчески</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Задачи для проверки</h5>
+                <div id="tasks-container">
+                    <!-- Здесь будут добавляться задачи -->
+                    <div class="text-center text-muted py-4" id="no-tasks-message">
+                        <p>Нет добавленных задач</p>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-primary mt-3" id="add-task-btn">
+                    <i class="bi bi-plus-circle"></i> Добавить задачу
+                </button>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 mb-4">
+            <button type="button" class="btn btn-primary btn-lg" id="start-batch-btn" disabled>
+                Запустить проверку
+            </button>
+        </div>
+
+        <div class="card d-none" id="batch-results-card">
+            <div class="card-body">
+                <h5 class="card-title">Результаты проверки</h5>
+                <div class="accordion" id="batch-results-container">
+                    <!-- Здесь будут результаты проверки -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шаблон для новой задачи -->
+    <template id="task-template">
+        <div class="task-item card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h6 class="card-subtitle mb-2 text-muted">Задача #<span class="task-number"></span></h6>
+                    <button type="button" class="btn-close remove-task-btn" aria-label="Удалить задачу"></button>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Тип задачи</label>
+                    <select class="form-select task-type" required>
+                        <option value="" selected disabled>Выберите тип задачи</option>
+                        {% for task_id, task_name in task_types.items() %}
+                            <option value="{{ task_id }}">{{ task_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Комментарий к проверке (необязательно)</label>
+                    <textarea class="form-control task-description" rows="2" placeholder="Дополнительная информация для проверки (при необходимости)..."></textarea>
+                    <div class="form-text">Изображение уже содержит условие задачи и решение. Здесь можно указать дополнительную информацию.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Изображения с решениями</label>
+                    <input class="form-control task-images" type="file" accept="image/*" multiple required>
+                    <div class="form-text">Можно загрузить несколько изображений с решениями.</div>
+                </div>
+
+                <div class="task-images-preview mt-3 row g-2">
+                    <!-- Здесь будут превью изображений -->
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <div class="modal fade" id="batch-loading-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Загрузка...</span>
+                    </div>
+                    <h5>Выполняется пакетная проверка...</h5>
+                    <p class="text-muted">Это может занять некоторое время в зависимости от количества задач и выбранной модели.</p>
+                    <div class="progress mt-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="batch-progress-bar" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <p class="mt-2"><span id="processed-count">0</span> из <span id="total-count">0</span> задач обработано</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', path='/js/batch.js') }}"></script>
+</body>
+</html>

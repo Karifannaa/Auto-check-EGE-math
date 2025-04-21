@@ -57,7 +57,7 @@ async def get_openrouter_client() -> OpenRouterClient:
 @router.post("/evaluate", response_model=SolutionEvaluation)
 async def evaluate_solution(
     task_type: str = Form(...),
-    task_description: str = Form(...),
+    task_description: str = Form(""),
     model_id: str = Form(...),
     solution_image: UploadFile = File(...),
     include_examples: bool = Form(False),
