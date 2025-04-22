@@ -280,10 +280,20 @@ class PromptGenerator:
         # Add task-specific instructions
         if task_type == "task_13":
             return base_system_message + """
-Для задания 13 (тригонометрическое, логарифмическое или показательное уравнение) особенно важно проверить:
-- Правильность всех преобразований уравнения
+Для задания 13 особенно важно проверить:
+- Правильность всех преобразований в пункте а
 - Корректность отбора корней в пункте б
 - Наличие обоснований для всех шагов решения
+
+КРИТИЧЕСКИ ВАЖНО:
+- В ПЕРВУЮ ОЧЕРЕДЬ СРАВНИВАЙ ОТВЕТЫ УЧЕНИКА С ПРАВИЛЬНЫМИ ОТВЕТАМИ!
+- ЕСЛИ ОТВЕТ УЧЕНИКА НЕВЕРНЫЙ, ЭТО ОБЯЗАТЕЛЬНО ДОЛЖНО БЫТЬ УЧТЕНО В ОЦЕНКЕ!
+- ДАЖЕ ЕСЛИ ВСЕ ПРЕОБРАЗОВАНИЯ ВЕРНЫЕ, НО ОТВЕТ НЕПРАВИЛЬНЫЙ - ЭТО ОШИБКА!
+
+ТЩАТЕЛЬНО ПРОВЕРЯЙ:
+- Убедись, что все корни уравнения найдены правильно и полностью
+- Проверь, что все корни на указанном отрезке отобраны верно, без пропусков и лишних корней
+- НЕ ЗАБУДЬ ОТМЕТИТЬ ВСЕ РАСХОЖДЕНИЯ МЕЖДУ ОТВЕТАМИ УЧЕНИКА И ПРАВИЛЬНЫМИ ОТВЕТАМИ
 """
         elif task_type == "task_17":
             return base_system_message + """
@@ -347,6 +357,26 @@ class PromptGenerator:
                 # Add a header for examples
                 content.append({"type": "text", "text": "\n\n## Примеры решений и их оценок:\n\n"})
 
+                # Define example descriptions with their scores and explanations
+                example_descriptions = {
+                    "first_example": {
+                        "score": 2,
+                        "description": "Решение оценено на 2 балла. Обоснованно получены верные ответы в обоих пунктах. Все шаги решения корректны, и отбор корней на заданном отрезке выполнен правильно."
+                    },
+                    "second_example": {
+                        "score": 1,
+                        "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но в пункте б) допущены ошибки при отборе корней на заданном отрезке."
+                    },
+                    "third_example": {
+                        "score": 1,
+                        "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но в пункте б) неверно определена принадлежность корней заданному отрезку."
+                    },
+                    "forth_example": {
+                        "score": 1,
+                        "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но при использовании тригонометрической окружности в пункте б) не выделена дуга, соответствующая отрезку."
+                    }
+                }
+
                 # Get subdirectories (each containing an example)
                 example_dirs = [d for d in os.listdir(examples_dir) if os.path.isdir(os.path.join(examples_dir, d))]
 
@@ -355,8 +385,11 @@ class PromptGenerator:
                     image_files = [f for f in os.listdir(dir_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
 
                     if image_files:
-                        # Add example header
-                        content.append({"type": "text", "text": f"### Пример {i}:\n"})
+                        # Get example info
+                        example_info = example_descriptions.get(example_dir, {"score": "?", "description": "Пример решения задания 13."})
+
+                        # Add example header with description
+                        content.append({"type": "text", "text": f"### Пример {i} (оценка: {example_info['score']} балла):\n{example_info['description']}\n\n"})
 
                         # Add each image in the example directory
                         for img_file in image_files:
@@ -365,11 +398,11 @@ class PromptGenerator:
                                 with open(img_path, "rb") as f:
                                     img_data = f.read()
 
-                                # Prepare image for API
+                                # Prepare image for API with smaller max_size to reduce token count
                                 from PIL import Image
                                 import io
                                 img = Image.open(io.BytesIO(img_data))
-                                example_image = prepare_image_for_api(img)
+                                example_image = prepare_image_for_api(img, max_size=1024)  # Reduced from 4096 to 1024
                                 content.append(example_image)
                                 content.append({"type": "text", "text": "\n"})
                             except Exception as e:
@@ -379,15 +412,15 @@ class PromptGenerator:
         if correct_solution_image:
             # Add a separator after examples if they were included
             if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
-                content.append({"type": "text", "text": "\n\n## Задание для оценки:\n\n"})
+                content.append({"type": "text", "text": "\n\n## Задание для оценки:\n\nТеперь, когда ты изучил примеры, переходим к заданию, которое нужно оценить.\n\n"})
 
             content.append(correct_solution_image)
             # Add a separator text between images
-            content.append({"type": "text", "text": "\n\nВыше представлено условие задачи и правильное решение. Ниже представлено решение ученика, которое нужно оценить:\n\n"})
+            content.append({"type": "text", "text": "\n\nВыше представлено условие задачи и ПРАВИЛЬНОЕ РЕШЕНИЕ. Ниже представлено решение ученика, которое нужно оценить. \n\nКРИТИЧЕСКИ ВАЖНО: В ПЕРВУЮ ОЧЕРЕДЬ СРАВНИ ОТВЕТЫ ученика с правильными ответами! Если ответ ученика неверный, это ОБЯЗАТЕЛЬНО должно быть учтено в оценке, даже если все преобразования выполнены верно!\n\nПроверь, что все корни найдены верно и отобраны правильно. Не забудь отметить все расхождения между ответами ученика и правильными ответами. Проанализируй решение в соответствии с критериями и примерами выше:\n\n"})
         else:
             # If no correct solution, but we had examples, add a separator
             if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
-                content.append({"type": "text", "text": "\n\n## Решение ученика для оценки:\n\n"})
+                content.append({"type": "text", "text": "\n\n## Решение ученика для оценки:\n\nТеперь, когда ты изучил примеры, переходим к решению ученика, которое нужно оценить. Проанализируй его в соответствии с критериями и примерами выше:\n\n"})
 
         # Add student solution image
         content.append(student_solution_image)
