@@ -18,7 +18,7 @@ class SolutionRequest(BaseModel):
     include_examples: bool = Field(False, description="Whether to include examples in the prompt")
     prompt_variant: Optional[str] = Field(None, description="Specific prompt variant to use (e.g., 'basic', 'detailed', 'with_examples')")
     temperature: float = Field(0.7, description="Sampling temperature for the model")
-    max_tokens: Optional[int] = Field(None, description="Maximum number of tokens to generate")
+    max_tokens: Optional[int] = Field(10000, description="Maximum number of tokens to generate")
 
 
 class EvaluationResult(BaseModel):
@@ -44,6 +44,7 @@ class SolutionEvaluation(BaseModel):
     result: EvaluationResult = Field(..., description="Evaluation result")
     created_at: datetime = Field(default_factory=datetime.now, description="Creation timestamp")
     estimated_cost: float = Field(0.0, description="Estimated cost of the evaluation in USD")
+    actual_cost: float = Field(0.0, description="Actual cost based on token usage from API response")
 
     class Config:
         json_schema_extra = {
@@ -63,6 +64,7 @@ class SolutionEvaluation(BaseModel):
                     "total_tokens": 2000
                 },
                 "created_at": "2023-04-01T12:00:00",
-                "estimated_cost": 0.0025
+                "estimated_cost": 0.0025,
+                "actual_cost": 0.0023
             }
         }

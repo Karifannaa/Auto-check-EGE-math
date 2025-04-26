@@ -34,22 +34,39 @@ class Settings(BaseSettings):
         "o4-mini": "openai/o4-mini",
         "o3": "openai/o3",
         "gemini-2.5-pro-preview": "google/gemini-2.5-pro-preview",
+        "gemini-2.5-pro-exp": "google/gemini-2.5-pro-exp-03-25",
+        "gemini-2.0-flash-exp-free": "google/gemini-2.0-flash-exp:free",
         "gemini-2.5-flash-preview-thinking": "google/gemini-2.5-flash-preview-thinking",
-        "claude-3.7-sonnet-thinking": "anthropic/claude-3.7-sonnet-thinking"
+        "gemini-2.5-flash-preview-thinking-free": "google/gemini-2.5-flash-preview:thinking",
+        "claude-3.7-sonnet-thinking": "anthropic/claude-3.7-sonnet-thinking",
+        "kimi-vl-a3b-thinking": "moonshotai/kimi-vl-a3b-thinking:free"
     }
 
     NON_REASONING_MODELS: Dict[str, str] = {
         "gpt-4o": "openai/gpt-4o-2024-11-20",
         "gpt-4o-mini": "openai/gpt-4o-mini",
+        "gpt-4.1": "openai/gpt-4.1",
+        "gpt-4.1-mini": "openai/gpt-4.1-mini",
+        "gpt-4.1-nano": "openai/gpt-4.1-nano",
         "gemini-2.5-flash-preview": "google/gemini-2.5-flash-preview",
         "gemini-2.0-flash": "google/gemini-2.0-flash",
         "gemini-1.5-flash": "google/gemini-1.5-flash",
-        "llama-4-maverick": "meta/llama-4-maverick",
-        "llama-4-scout": "meta/llama-4-scout",
+        "gemma-3-27b": "google/gemma-3-27b-it",
+        "gemma-3-27b-free": "google/gemma-3-27b-it:free",
+        "gemma-3-12b": "google/gemma-3-12b-it",
+        "gemma-3-12b-free": "google/gemma-3-12b-it:free",
+        "gemma-3-4b": "google/gemma-3-4b-it",
+        "gemma-3-4b-free": "google/gemma-3-4b-it:free",
+        "gemma-3-1b": "google/gemma-3-1b-it:free",
+        "llama-4-maverick": "meta-llama/llama-4-maverick",
+        "llama-4-maverick-free": "meta-llama/llama-4-maverick:free",
+        "llama-4-scout": "meta-llama/llama-4-scout",
+        "llama-4-scout-free": "meta-llama/llama-4-scout:free",
         "qwen-2.5-vl-32b": "qwen/qwen2.5-vl-32b-instruct",
-        "mistral-small-3.1-24b": "mistral/mistral-small-3.1-24b",
+        "qwen-2.5-vl-32b-free": "qwen/qwen2.5-vl-32b-instruct:free",
+        "mistral-small-3.1-24b": "mistralai/mistral-small-3.1-24b-instruct",
+        "mistral-small-3.1-24b-free": "mistralai/mistral-small-3.1-24b-instruct:free",
         "claude-3.7-sonnet": "anthropic/claude-3.7-sonnet",
-        "gemma-3-27b": "google/gemma-3-27b",
         "phi-4-multimodal": "microsoft/phi-4-multimodal-instruct"
     }
 
