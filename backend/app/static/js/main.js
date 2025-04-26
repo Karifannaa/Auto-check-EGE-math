@@ -196,11 +196,27 @@ document.addEventListener('DOMContentLoaded', function() {
         // Time is already in seconds, no need to divide by 1000
         const processingTimeInSeconds = processingTime.toFixed(2);
 
+        // Get cost information
+        const actualCost = data.actual_cost || 0;
+        const estimatedCost = data.estimated_cost || 0;
+        const formattedActualCost = actualCost.toFixed(6);
+        const formattedEstimatedCost = estimatedCost.toFixed(6);
+
+        // Get token usage information
+        const promptTokens = data.result?.prompt_tokens || 'N/A';
+        const completionTokens = data.result?.completion_tokens || 'N/A';
+        const totalTokens = data.result?.total_tokens || 'N/A';
+
         // Create result HTML
         resultContent.innerHTML = `
             <div class="mb-3">
                 <span class="badge bg-primary">Модель: ${modelId}</span>
                 <span class="badge bg-secondary">Время: ${processingTimeInSeconds} сек</span>
+                <span class="badge bg-info">Стоимость: $${formattedActualCost}</span>
+            </div>
+
+            <div class="mb-3 small text-muted">
+                <div>Использовано токенов: ${promptTokens} (промпт) + ${completionTokens} (ответ) = ${totalTokens} (всего)</div>
             </div>
 
             <div class="alert alert-info">
