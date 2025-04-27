@@ -8,6 +8,7 @@ evaluating math exam solutions using reasoning models.
 from typing import Dict, List, Optional, Union, Any
 from app.utils.specialized_prompts import (
     TASK_13_PROMPTS,
+    TASK_14_PROMPTS,
     DEFAULT_PROMPT_VARIANTS,
     AVAILABLE_PROMPT_VARIANTS
 )
@@ -44,28 +45,20 @@ class PromptGenerator:
             # Fall back to basic prompt if variant not found
             return TASK_13_PROMPTS["basic"]
 
-    def _get_task_14_template(self) -> str:
-        """Get template for Task 14 (stereometry)."""
-        return """
-Ты - эксперт по проверке задач ЕГЭ по математике. Проанализируй решение стереометрической задачи.
+    def _get_task_14_template(self, variant: str = "basic") -> str:
+        """Get template for Task 14 (stereometry).
 
-Задача: {task_description}
+        Args:
+            variant: Prompt variant to use ("basic", "detailed", "with_examples", or "image_examples")
 
-Критерии оценки:
-- 2 балла: Обоснованно получен верный ответ
-- 1 балл: Получен неверный ответ из-за вычислительной ошибки, но при этом имеется верная последовательность всех шагов решения
-- 0 баллов: Решение не соответствует ни одному из критериев, перечисленных выше
-
-Максимальный балл: 2
-
-Проанализируй решение и оцени его по указанным критериям. Предоставь подробное обоснование своей оценки, указав на конкретные элементы решения.
-
-Твой ответ должен содержать:
-1. Анализ хода решения
-2. Проверку правильности вычислений
-3. Итоговую оценку (0, 1 или 2 балла)
-4. Обоснование выставленной оценки
-"""
+        Returns:
+            Template string for the specified variant
+        """
+        if variant in TASK_14_PROMPTS:
+            return TASK_14_PROMPTS[variant]
+        else:
+            # Fall back to basic prompt if variant not found
+            return TASK_14_PROMPTS["basic"]
 
     def _get_task_15_template(self) -> str:
         """Get template for Task 15 (inequalities)."""
@@ -217,7 +210,7 @@ class PromptGenerator:
             # Use default variant for this task type
             prompt_variant = DEFAULT_PROMPT_VARIANTS.get(task_type, "basic")
 
-        # For task_13, we have specialized prompts with variants
+        # For task_13 and task_14, we have specialized prompts with variants
         if task_type == "task_13":
             # If include_examples is True, use the image_examples variant
             if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS[task_type]:
@@ -226,6 +219,14 @@ class PromptGenerator:
                 prompt_variant = "image_examples"
             else:
                 template = self._get_task_13_template(prompt_variant)
+        elif task_type == "task_14":
+            # If include_examples is True, use the image_examples variant
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS[task_type]:
+                template = self._get_task_14_template("image_examples")
+                # Set prompt_variant to image_examples to avoid adding examples twice
+                prompt_variant = "image_examples"
+            else:
+                template = self._get_task_14_template(prompt_variant)
         else:
             # For other task types, use the standard template
             template = self.templates[task_type]
@@ -295,6 +296,24 @@ class PromptGenerator:
 - Проверь, что все корни на указанном отрезке отобраны верно, без пропусков и лишних корней
 - НЕ ЗАБУДЬ ОТМЕТИТЬ ВСЕ РАСХОЖДЕНИЯ МЕЖДУ ОТВЕТАМИ УЧЕНИКА И ПРАВИЛЬНЫМИ ОТВЕТАМИ
 """
+        elif task_type == "task_14":
+            return base_system_message + """
+Для задания 14 (стереометрическая задача) особенно важно проверить:
+- Корректность и полноту доказательства в пункте а
+- Правильность построений и вычислений в пункте б
+- Обоснованность каждого шага решения
+
+КРИТИЧЕСКИ ВАЖНО:
+- В ПЕРВУЮ ОЧЕРЕДЬ СРАВНИВАЙ ОТВЕТЫ УЧЕНИКА С ПРАВИЛЬНЫМИ ОТВЕТАМИ!
+- ЕСЛИ ОТВЕТ УЧЕНИКА НЕВЕРНЫЙ, ЭТО ОБЯЗАТЕЛЬНО ДОЛЖНО БЫТЬ УЧТЕНО В ОЦЕНКЕ!
+- РАЗЛИЧАЙ АРИФМЕТИЧЕСКИЕ ОШИБКИ ОТ КОНЦЕПТУАЛЬНЫХ ОШИБОК!
+
+ТЩАТЕЛЬНО ПРОВЕРЯЙ:
+- Убедись, что доказательство в пункте а полное и корректное
+- Проверь, что все вычисления в пункте б выполнены правильно
+- Обрати внимание на правильность применения формул и теорем стереометрии
+- НЕ ЗАБУДЬ ОТМЕТИТЬ ВСЕ РАСХОЖДЕНИЯ МЕЖДУ ОТВЕТАМИ УЧЕНИКА И ПРАВИЛЬНЫМИ ОТВЕТАМИ
+"""
         elif task_type == "task_17":
             return base_system_message + """
 Для задания 17 (планиметрическая задача с доказательством) особенно важно проверить:
@@ -345,37 +364,60 @@ class PromptGenerator:
         # Create content list with prompt and images
         content = [{"type": "text", "text": prompt}]
 
-        # Add example images if requested and task_type is task_13 and we're using the image_examples prompt
-        if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
+        # Add example images if requested and task_type is task_13 or task_14 and we're using the image_examples prompt
+        if include_examples and (task_type == "task_13" or task_type == "task_14") and prompt_variant == "image_examples":
             import os
             from app.utils.image_utils import prepare_image_for_api
 
-            # Path to examples directory
-            examples_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "examples", "13")
+            # Path to examples directory - use the appropriate subfolder based on task type
+            task_number = task_type.split("_")[1]  # Extract "13" or "14" from "task_13" or "task_14"
+            examples_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "examples", task_number)
 
             if os.path.exists(examples_dir):
                 # Add a header for examples
                 content.append({"type": "text", "text": "\n\n## Примеры решений и их оценок:\n\n"})
 
-                # Define example descriptions with their scores and explanations
-                example_descriptions = {
-                    "first_example": {
-                        "score": 2,
-                        "description": "Решение оценено на 2 балла. Обоснованно получены верные ответы в обоих пунктах. Все шаги решения корректны, и отбор корней на заданном отрезке выполнен правильно."
-                    },
-                    "second_example": {
-                        "score": 1,
-                        "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но в пункте б) допущены ошибки при отборе корней на заданном отрезке."
-                    },
-                    "third_example": {
-                        "score": 1,
-                        "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но в пункте б) неверно определена принадлежность корней заданному отрезку."
-                    },
-                    "forth_example": {
-                        "score": 1,
-                        "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но при использовании тригонометрической окружности в пункте б) не выделена дуга, соответствующая отрезку."
+                # Define example descriptions with their scores and explanations based on task type
+                if task_type == "task_13":
+                    example_descriptions = {
+                        "first_example": {
+                            "score": 2,
+                            "description": "Решение оценено на 2 балла. Обоснованно получены верные ответы в обоих пунктах. Все шаги решения корректны, и отбор корней на заданном отрезке выполнен правильно."
+                        },
+                        "second_example": {
+                            "score": 1,
+                            "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но в пункте б) допущены ошибки при отборе корней на заданном отрезке."
+                        },
+                        "third_example": {
+                            "score": 1,
+                            "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но в пункте б) неверно определена принадлежность корней заданному отрезку."
+                        },
+                        "forth_example": {
+                            "score": 1,
+                            "description": "Решение оценено на 1 балл. Обоснованно получен верный ответ в пункте а), но при использовании тригонометрической окружности в пункте б) не выделена дуга, соответствующая отрезку."
+                        }
                     }
-                }
+                elif task_type == "task_14":
+                    example_descriptions = {
+                        "first_example": {
+                            "score": 3,
+                            "description": "Решение оценено на 3 балла. Имеется верное доказательство утверждения пункта а) и обоснованно получен верный ответ в пункте б). Все шаги решения корректны."
+                        },
+                        "second_example": {
+                            "score": 1,
+                            "description": "Решение оценено на 1 балл. Имеется верное доказательство утверждения пункта а), но решение пункта б) отсутствует."
+                        },
+                        "third_example": {
+                            "score": 1,
+                            "description": "Решение оценено на 1 балл. Имеется верное доказательство утверждения пункта а) и получен неверный ответ в пункте б) из-за арифметической ошибки."
+                        },
+                        "forth_example": {
+                            "score": 0,
+                            "description": "Решение оценено на 0 баллов. Решалась другая задача: точка K лежит на стороне основания, а не на боковом ребре."
+                        }
+                    }
+                else:
+                    example_descriptions = {}
 
                 # Get subdirectories (each containing an example)
                 example_dirs = [d for d in os.listdir(examples_dir) if os.path.isdir(os.path.join(examples_dir, d))]
@@ -411,15 +453,15 @@ class PromptGenerator:
         # Add correct solution image if provided
         if correct_solution_image:
             # Add a separator after examples if they were included
-            if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
+            if include_examples and (task_type == "task_13" or task_type == "task_14") and prompt_variant == "image_examples":
                 content.append({"type": "text", "text": "\n\n## Задание для оценки:\n\nТеперь, когда ты изучил примеры, переходим к заданию, которое нужно оценить.\n\n"})
 
             content.append(correct_solution_image)
             # Add a separator text between images
-            content.append({"type": "text", "text": "\n\nВыше представлено условие задачи и ПРАВИЛЬНОЕ РЕШЕНИЕ. Ниже представлено решение ученика, которое нужно оценить. \n\nКРИТИЧЕСКИ ВАЖНО: В ПЕРВУЮ ОЧЕРЕДЬ СРАВНИ ОТВЕТЫ ученика с правильными ответами! Если ответ ученика неверный, это ОБЯЗАТЕЛЬНО должно быть учтено в оценке, даже если все преобразования выполнены верно!\n\nПроверь, что все корни найдены верно и отобраны правильно. Не забудь отметить все расхождения между ответами ученика и правильными ответами. Проанализируй решение в соответствии с критериями и примерами выше:\n\n"})
+            content.append({"type": "text", "text": "\n\nВыше представлено условие задачи и ПРАВИЛЬНОЕ РЕШЕНИЕ. Ниже представлено решение ученика, которое нужно оценить. \n\nКРИТИЧЕСКИ ВАЖНО: В ПЕРВУЮ ОЧЕРЕДЬ СРАВНИ ОТВЕТЫ ученика с правильными ответами! Если ответ ученика неверный, это ОБЯЗАТЕЛЬНО должно быть учтено в оценке, даже если все преобразования выполнены верно!\n\nПроверь, что все шаги решения выполнены правильно. Не забудь отметить все расхождения между ответами ученика и правильными ответами. Проанализируй решение в соответствии с критериями и примерами выше:\n\n"})
         else:
             # If no correct solution, but we had examples, add a separator
-            if include_examples and task_type == "task_13" and prompt_variant == "image_examples":
+            if include_examples and (task_type == "task_13" or task_type == "task_14") and prompt_variant == "image_examples":
                 content.append({"type": "text", "text": "\n\n## Решение ученика для оценки:\n\nТеперь, когда ты изучил примеры, переходим к решению ученика, которое нужно оценить. Проанализируй его в соответствии с критериями и примерами выше:\n\n"})
 
         # Add student solution image

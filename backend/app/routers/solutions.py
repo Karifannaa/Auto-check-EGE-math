@@ -173,14 +173,69 @@ async def evaluate_solution(
         # Calculate evaluation time
         evaluation_time = time.time() - start_time
 
-        # Extract the result
-        result_text = response["choices"][0]["message"]["content"]
+        # Extract the result - handle different response formats
+        # Standard OpenAI format
+        if "choices" in response and len(response["choices"]) > 0:
+            if "message" in response["choices"][0]:
+                result_text = response["choices"][0]["message"]["content"]
+            elif "text" in response["choices"][0]:
+                result_text = response["choices"][0]["text"]
+            else:
+                logger.warning(f"Unexpected response format: {response.keys()}")
+                result_text = str(response)
+        # Google Gemini format
+        elif "candidates" in response and len(response["candidates"]) > 0:
+            if "content" in response["candidates"][0]:
+                if "parts" in response["candidates"][0]["content"]:
+                    parts = response["candidates"][0]["content"]["parts"]
+                    result_text = "".join([part.get("text", "") for part in parts if "text" in part])
+                else:
+                    result_text = str(response["candidates"][0]["content"])
+            else:
+                logger.warning(f"Unexpected Gemini response format: {response.keys()}")
+                result_text = str(response)
+        # Anthropic Claude format
+        elif "content" in response:
+            if isinstance(response["content"], list):
+                result_text = "".join([item.get("text", "") for item in response["content"] if "text" in item])
+            else:
+                result_text = str(response["content"])
+        # Fallback for unknown formats
+        else:
+            logger.warning(f"Unknown response format: {response.keys()}")
+            result_text = str(response)
 
-        # Extract usage information if available
-        usage = response.get("usage", {})
-        prompt_tokens = usage.get("prompt_tokens")
-        completion_tokens = usage.get("completion_tokens")
-        total_tokens = usage.get("total_tokens")
+        logger.info(f"Extracted result text (first 100 chars): {result_text[:100]}...")
+
+        # Extract usage information if available - handle different formats
+        prompt_tokens = None
+        completion_tokens = None
+        total_tokens = None
+
+        # Standard OpenAI format
+        if "usage" in response:
+            usage = response["usage"]
+            prompt_tokens = usage.get("prompt_tokens")
+            completion_tokens = usage.get("completion_tokens")
+            total_tokens = usage.get("total_tokens")
+        # Google Gemini format
+        elif "usageMetadata" in response:
+            usage = response["usageMetadata"]
+            prompt_tokens = usage.get("promptTokenCount")
+            completion_tokens = usage.get("candidatesTokenCount")
+            total_tokens = None
+            if prompt_tokens is not None and completion_tokens is not None:
+                total_tokens = prompt_tokens + completion_tokens
+        # Anthropic Claude format
+        elif "usage" in response and "input_tokens" in response["usage"]:
+            usage = response["usage"]
+            prompt_tokens = usage.get("input_tokens")
+            completion_tokens = usage.get("output_tokens")
+            total_tokens = None
+            if prompt_tokens is not None and completion_tokens is not None:
+                total_tokens = prompt_tokens + completion_tokens
+
+        logger.info(f"Token usage: prompt={prompt_tokens}, completion={completion_tokens}, total={total_tokens}")
 
         # Parse the score from the result with improved robustness and semantic section detection
         score = 0
