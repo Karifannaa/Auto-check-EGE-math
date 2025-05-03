@@ -181,6 +181,40 @@ class PromptGenerator:
 4. Обоснование выставленной оценки
 """
 
+    def get_prompt_text(
+        self,
+        task_type: str,
+        prompt_variant: Optional[str] = None
+    ) -> str:
+        """
+        Get the prompt text for a specific task type and variant without formatting.
+
+        Args:
+            task_type: Type of task (e.g., "task_13", "task_17")
+            prompt_variant: Specific prompt variant to use (e.g., "basic", "detailed")
+
+        Returns:
+            Raw prompt text for the specified task type and variant
+        """
+        if task_type not in self.templates:
+            raise ValueError(f"Unknown task type: {task_type}")
+
+        # Determine which prompt variant to use
+        if prompt_variant is None:
+            # Use default variant for this task type
+            prompt_variant = DEFAULT_PROMPT_VARIANTS.get(task_type, "basic")
+
+        # For task_13 and task_14, we have specialized prompts with variants
+        if task_type == "task_13":
+            template = self._get_task_13_template(prompt_variant)
+        elif task_type == "task_14":
+            template = self._get_task_14_template(prompt_variant)
+        else:
+            # For other task types, use the standard template
+            template = self.templates[task_type]
+
+        return template
+
     def generate_prompt(
         self,
         task_type: str,
