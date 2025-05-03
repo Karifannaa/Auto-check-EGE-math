@@ -1,0 +1,12 @@
+{
+  "task_id": "string",         
+  "example_id": "string",      
+  "solution_id": "string",     
+  "file_paths": {
+    "with_answer": ["string"],  
+    "without_answer": ["string"] 
+  },
+  "score": "integer",          
+  "parts_count": "integer",    
+  "task_type": "string"        
+}
