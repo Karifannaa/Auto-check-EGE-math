@@ -153,6 +153,10 @@ def calculate_actual_cost(model_id: str, prompt_tokens: int, completion_tokens: 
     Returns:
         Actual cost in USD
     """
+    # Special case for free models with specific IDs
+    if model_id == "google/gemini-2.0-flash-exp:free":
+        return 0.0
+
     # Get the full model name
     if model_id in settings.REASONING_MODELS:
         model_name = settings.REASONING_MODELS[model_id]
@@ -163,6 +167,9 @@ def calculate_actual_cost(model_id: str, prompt_tokens: int, completion_tokens: 
 
     # Get pricing for the model
     if model_name not in MODEL_PRICING:
+        # Check if it's a free model (ends with ":free")
+        if model_name.endswith(":free"):
+            return 0.0
         raise ValueError(f"Pricing information not available for model: {model_name}")
 
     pricing = MODEL_PRICING[model_name]

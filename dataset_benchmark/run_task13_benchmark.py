@@ -2,16 +2,34 @@
 Script to run a benchmark for task 13 using a free model.
 """
 
+import os
+import sys
 import asyncio
+import subprocess
+from datetime import datetime
 from benchmark_models import ModelBenchmark
+
+# OpenRouter API key
+OPENROUTER_API_KEY = "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"
 
 async def run_task13_benchmark():
     """Run a benchmark for task 13 using a free model."""
     # Use a free model for testing
-    model_id = "moonshotai/kimi-vl-a3b-thinking:free"
+    model_id = "google/gemini-2.0-flash-exp:free"  # Try a different model
 
-    # Create benchmark instance
-    benchmark = ModelBenchmark()
+    # Create model-specific results directory
+    model_short_name = model_id.split("/")[-1].split(":")[0]
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    model_results_dir = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "benchmark_results",
+        f"task13_{model_short_name}_{timestamp}"
+    )
+    os.makedirs(model_results_dir, exist_ok=True)
+    print(f"Created model results directory: {model_results_dir}")
+
+    # Create benchmark instance with API key
+    benchmark = ModelBenchmark(api_key=OPENROUTER_API_KEY)
 
     try:
         # Run benchmark for task 13 with a limited number of examples
@@ -23,63 +41,44 @@ async def run_task13_benchmark():
             without_answer=True,
             max_examples=3,  # Limit to 3 examples for quick testing
             prompt_variant="detailed",
-            include_examples=False
+            include_examples=False,
+            output_dir=model_results_dir  # Use the model-specific directory
         )
 
         # Analyze results
-        analysis = benchmark.analyze_results(results)
-        analysis_file = benchmark.save_analysis(analysis, results_file)
+        try:
+            analysis = benchmark.analyze_results(results)
+            analysis_file = benchmark.save_analysis(analysis, results_file)
 
-        # Print summary
-        print("\nBenchmark Summary:")
-        print(f"Total examples: {analysis['total_examples']}")
-        print(f"Total evaluations: {analysis['total_evaluations']}")
-        print(f"Total cost: ${analysis['summary']['total_cost']:.4f}")
-        if analysis['summary'].get('avg_quality_score') is not None:
-            print(f"Average quality score: {analysis['summary']['avg_quality_score'] * 100:.2f}%")
+            # Print brief summary
+            print("\nBenchmark Summary:")
+            print(f"Total examples: {analysis['total_examples']}")
+            print(f"Total evaluations: {analysis['total_evaluations']}")
+            print(f"Total cost: ${analysis['summary']['total_cost']:.4f}")
+        except Exception as e:
+            print(f"\nError analyzing results: {e}")
+            print("Continuing with metrics table generation...")
 
-        print("\nModel Performance:")
-        for model_id, model_data in analysis["models"].items():
-            print(f"\n{model_id}:")
-            for answer_type, metrics in model_data.items():
-                print(f"  {answer_type}:")
-                print(f"    Accuracy: {metrics['accuracy']:.2f}%")
+        # Run the analysis script to generate the metrics table
+        print("\nGenerating metrics table...")
+        try:
+            # Use the Python executable from the current environment
+            python_executable = sys.executable
 
-                # Print new metrics
-                if metrics.get('quality_score') is not None:
-                    print(f"    Quality score: {metrics['quality_score']:.2f}%")
-                if metrics.get('avg_score_distance') is not None:
-                    print(f"    Avg. score distance: {metrics['avg_score_distance']:.2f}")
-
-                # Print precision, recall, F1
-                if 'macro_precision' in metrics:
-                    print(f"    Macro precision: {metrics['macro_precision']:.2f}%")
-                    print(f"    Macro recall: {metrics['macro_recall']:.2f}%")
-                    print(f"    Macro F1: {metrics['macro_f1']:.2f}%")
-
-                # Print confusion matrix if available and not too large
-                if 'confusion_matrix' in metrics and metrics['confusion_matrix'] and len(metrics['confusion_matrix']) <= 5:
-                    print(f"    Confusion matrix:")
-                    # Print header
-                    scores = sorted(metrics['confusion_matrix'].keys())
-                    header = "      True\\Pred |"
-                    for score in scores:
-                        header += f" {score} |"
-                    print(header)
-                    # Print rows
-                    for true_score in scores:
-                        row = f"      {true_score}        |"
-                        for pred_score in scores:
-                            count = metrics['confusion_matrix'][true_score].get(pred_score, 0)
-                            row += f" {count} |"
-                        print(row)
-
-                print(f"    Evaluations: {metrics['evaluations']}")
-                print(f"    Avg. evaluation time: {metrics['avg_evaluation_time']:.2f}s")
-                print(f"    Total cost: ${metrics['total_cost']:.4f}")
+            # Run the analysis script
+            subprocess.run([
+                python_executable,
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), "analyze_existing_results.py"),
+                results_file
+            ], check=True)
+            print(f"Metrics table generated successfully")
+        except subprocess.CalledProcessError as e:
+            print(f"Error generating metrics table: {e}")
 
         print(f"\nDetailed results saved to: {results_file}")
-        print(f"Analysis saved to: {analysis_file}")
+        if 'analysis_file' in locals():
+            print(f"Analysis saved to: {analysis_file}")
+        print(f"All results and analysis files are in: {model_results_dir}")
 
     finally:
         await benchmark.close()

@@ -9,11 +9,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.1\\13.1.1\\without_answer\\13.1.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.1/13.1_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -27,11 +30,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.1\\13.1.2\\without_answer\\13.1.2_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.1\\13.1.2\\without_answer\\13.1.2_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.1/13.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -43,11 +49,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.1\\13.1.3\\without_answer\\13.1.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.1/13.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -59,11 +68,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.1\\13.1.4\\without_answer\\13.1.4_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.1/13.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -75,11 +87,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.2\\13.2.1\\without_answer\\13.2.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.2/13.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -91,11 +106,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.2\\13.2.2\\without_answer\\13.2.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.2/13.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -107,11 +125,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.2\\13.2.3\\without_answer\\13.2.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.2/13.2_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -125,11 +146,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.2\\13.2.4\\without_answer\\13.2.4_solve_part_1_estimate_0.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.2\\13.2.4\\without_answer\\13.2.4_solve_part_2_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.2/13.2_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 2,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -141,11 +165,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.3\\13.3.1\\without_answer\\13.3.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.3/13.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -157,11 +184,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.3\\13.3.2\\without_answer\\13.3.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.3/13.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -173,11 +203,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.3\\13.3.3\\without_answer\\13.3.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.3/13.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -189,11 +222,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.3\\13.3.4\\without_answer\\13.3.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.3/13.3_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -205,11 +241,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.4\\13.4.1\\without_answer\\13.4.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.4/13.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -221,11 +260,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.4\\13.4.2\\without_answer\\13.4.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.4/13.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -237,11 +279,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.4\\13.4.3\\without_answer\\13.4.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.4/13.4_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -253,11 +298,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.5\\13.5.1\\without_answer\\13.5.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.5/13.5_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -269,11 +317,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.5\\13.5.2\\without_answer\\13.5.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.5/13.5_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -285,11 +336,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.5\\13.5.3\\without_answer\\13.5.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.5/13.5_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -301,11 +355,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.6\\13.6.1\\without_answer\\13.6.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.6/13.6_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -317,11 +374,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.6\\13.6.2\\without_answer\\13.6.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.6/13.6_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "13",
@@ -333,11 +393,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\13\\13.6\\13.6.3\\without_answer\\13.6.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/13/13.6/13.6_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Тригонометрические уравнения"
+    "task_type": "\u0422\u0440\u0438\u0433\u043e\u043d\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f"
   },
   {
     "task_id": "14",
@@ -349,11 +412,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.1\\14.1.1\\without_answer\\14.1.1_solve_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.1/14.1_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -367,11 +433,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.1\\14.1.2\\without_answer\\14.1.2_solve_part_1_estimate_3.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.1\\14.1.2\\without_answer\\14.1.2_solve_part_2_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.1/14.1_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 2,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -383,11 +452,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.1\\14.1.3\\without_answer\\14.1.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.1/14.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -399,11 +471,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.1\\14.1.4\\without_answer\\14.1.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.1/14.1_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -417,11 +492,15 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.2\\14.2.1\\without_answer\\14.2.1_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.2\\14.2.1\\without_answer\\14.2.1_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.2\\14.2_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.2\\14.2_solve_true_part_2.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -437,11 +516,15 @@
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.2\\14.2.2\\without_answer\\14.2.2_solve_part_1_estimate_0.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.2\\14.2.2\\without_answer\\14.2.2_solve_part_2_estimate_0.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.2\\14.2.2\\without_answer\\14.2.2_solve_part_3_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.2\\14.2_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.2\\14.2_solve_true_part_2.png"
       ]
     },
     "score": 0,
     "parts_count": 3,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -453,11 +536,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.2\\14.2.3\\without_answer\\14.2.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.2\\14.2_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.2\\14.2_solve_true_part_2.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -469,11 +556,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.3\\14.3.1\\without_answer\\14.3.1_solve_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.3/14.3_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -487,11 +577,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.3\\14.3.2\\without_answer\\14.3.2_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.3\\14.3.2\\without_answer\\14.3.2_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.3/14.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -507,11 +600,14 @@
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.3\\14.3.3\\without_answer\\14.3.3_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.3\\14.3.3\\without_answer\\14.3.3_solve_part_2_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.3\\14.3.3\\without_answer\\14.3.3_solve_part_3_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.3/14.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 3,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -523,11 +619,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.4\\14.4.1\\without_answer\\14.4.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.4/14.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -539,11 +638,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.4\\14.4.2\\without_answer\\14.4.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.4/14.4_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -557,11 +659,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.4\\14.4.3\\without_answer\\14.4.3_solve_part_1_estimate_3.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.4\\14.4.3\\without_answer\\14.4.3_solve_part_2_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.4/14.4_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 2,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -573,11 +678,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.5\\14.5.1\\without_answer\\14.5.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.5/14.5_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -589,11 +697,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.5\\14.5.2\\without_answer\\14.5.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.5/14.5_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -605,11 +716,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.5\\14.5.3\\without_answer\\14.5.3_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.5/14.5_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -621,11 +735,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.6\\14.6.1\\without_answer\\14.6.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.6/14.6_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "14",
@@ -639,11 +756,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.6\\14.6.2\\without_answer\\14.6.2_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\14\\14.6\\14.6.2\\without_answer\\14.6.2_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/14/14.6/14.6_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Стереометрическая задача"
+    "task_type": "\u0421\u0442\u0435\u0440\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "15",
@@ -657,11 +777,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.1\\15.1.1\\without_answer\\15.1.1_solve_part_1_estimate_2.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.1\\15.1.1\\without_answer\\15.1.1_solve_part_2_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.1/15.1_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 2,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -673,11 +796,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.1\\15.1.2\\without_answer\\15.1.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.1/15.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -689,11 +815,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.1\\15.1.3\\without_answer\\15.1.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.1/15.1_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -705,11 +834,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.1\\15.1.4\\without_answer\\15.1.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.1/15.1_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -721,11 +853,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.2\\15.2.1\\without_answer\\15.2.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.2/15.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -737,11 +872,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.2\\15.2.2\\without_answer\\15.2.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.2/15.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -753,11 +891,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.2\\15.2.3\\without_answer\\15.2.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.2/15.2_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -769,11 +910,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.2\\15.2.4\\without_answer\\15.2.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.2/15.2_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -785,11 +929,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.3\\15.3.1\\without_answer\\15.3.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.3/15.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -801,11 +948,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.3\\15.3.2\\without_answer\\15.3.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.3/15.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -817,11 +967,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.3\\15.3.3\\without_answer\\15.3.3_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.3/15.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -833,11 +986,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.3\\15.3.4\\without_answer\\15.3.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.3/15.3_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -849,11 +1005,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.4\\15.4.1\\without_answer\\15.4.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.4/15.4_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -865,11 +1024,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.4\\15.4.2\\without_answer\\15.4.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.4/15.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -881,11 +1043,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.4\\15.4.3\\without_answer\\15.4.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.4/15.4_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -897,11 +1062,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.5\\15.5.1\\without_answer\\15.5.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.5/15.5_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -913,11 +1081,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.5\\15.5.2\\without_answer\\15.5.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.5/15.5_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -929,11 +1100,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.6\\15.6.1\\without_answer\\15.6.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.6/15.6_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "15",
@@ -945,11 +1119,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\15\\15.6\\15.6.2\\without_answer\\15.6.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/15/15.6/15.6_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Логарифмические неравенства"
+    "task_type": "\u041b\u043e\u0433\u0430\u0440\u0438\u0444\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043d\u0435\u0440\u0430\u0432\u0435\u043d\u0441\u0442\u0432\u0430"
   },
   {
     "task_id": "16",
@@ -961,11 +1138,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.1\\16.1.1\\without_answer\\16.1.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.1/16.1_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -977,11 +1157,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.1\\16.1.2\\without_answer\\16.1.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.1/16.1_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -993,11 +1176,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.1\\16.1.3\\without_answer\\16.1.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.1/16.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1009,11 +1195,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.1\\16.1.4\\without_answer\\16.1.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.1/16.1_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1027,11 +1216,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.1\\without_answer\\16.2.1_solve_part_1_estimate_2.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.1\\without_answer\\16.2.1_solve_part_2_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.2/16.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 2,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1045,11 +1237,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.2\\without_answer\\16.2.2_solve_part_1_estimate_2.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.2\\without_answer\\16.2.2_solve_part_2_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.2/16.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 2,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1063,11 +1258,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.3\\without_answer\\16.2.3_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.3\\without_answer\\16.2.3_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.2/16.2_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1081,11 +1279,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.4\\without_answer\\16.2.4_solve_part_1_estimate_0.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.2\\16.2.4\\without_answer\\16.2.4_solve_part_2_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.2/16.2_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 2,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1097,11 +1298,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.3\\16.3.1\\without_answer\\16.3.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.3/16.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1115,11 +1319,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.3\\16.3.2\\without_answer\\16.3.2_solve_part_1_estimate_2.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.3\\16.3.2\\without_answer\\16.3.2_solve_part_2_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.3/16.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 2,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1131,11 +1338,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.3\\16.3.3\\without_answer\\16.3.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.3/16.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1147,11 +1357,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.3\\16.3.4\\without_answer\\16.3.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.3/16.3_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1163,11 +1376,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.4\\16.4.1\\without_answer\\16.4.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.4/16.4_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1179,11 +1395,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.4\\16.4.2\\without_answer\\16.4.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.4/16.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1195,11 +1414,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.4\\16.4.3\\without_answer\\16.4.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.4/16.4_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1211,11 +1433,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.5\\16.5.1\\without_answer\\16.5.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.5/16.5_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "16",
@@ -1227,11 +1452,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\16\\16.5\\16.5.2\\without_answer\\16.5.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/16/16.5/16.5_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Планиметрическая задача"
+    "task_type": "\u041f\u043b\u0430\u043d\u0438\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0437\u0430\u0434\u0430\u0447\u0430"
   },
   {
     "task_id": "17",
@@ -1243,11 +1471,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.1\\17.1.1\\without_answer\\17.1.1_solve_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.1/17.1_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1261,11 +1492,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.1\\17.1.2\\without_answer\\17.1.2_solve_part_1_estimate_3.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.1\\17.1.2\\without_answer\\17.1.2_solve_part_2_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.1/17.1_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 2,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1277,11 +1511,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.1\\17.1.3\\without_answer\\17.1.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.1/17.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1293,11 +1530,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.1\\17.1.4\\without_answer\\17.1.4_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.1/17.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1311,11 +1551,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.2\\17.2.1\\without_answer\\17.2.1_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.2\\17.2.1\\without_answer\\17.2.1_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.2/17.2_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1327,11 +1570,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.2\\17.2.2\\without_answer\\17.2.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.2/17.2_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1345,11 +1591,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.2\\17.2.3\\without_answer\\17.2.3_solve_part_1_estimate_0.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.2\\17.2.3\\without_answer\\17.2.3_solve_part_2_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.2/17.2_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 2,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1361,11 +1610,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.3\\17.3.1\\without_answer\\17.3.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.3/17.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1377,11 +1629,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.3\\17.3.2\\without_answer\\17.3.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.3/17.3_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1393,11 +1648,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.3\\17.3.3\\without_answer\\17.3.3_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.3/17.3_solve_true.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1409,11 +1667,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.4\\17.4.1\\without_answer\\17.4.1_solve_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.4/17.4_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1427,11 +1688,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.4\\17.4.2\\without_answer\\17.4.2_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.4\\17.4.2\\without_answer\\17.4.2_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.4/17.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1443,11 +1707,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.4\\17.4.3\\without_answer\\17.4.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.4/17.4_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1459,11 +1726,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.5\\17.5.1\\without_answer\\17.5.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.5/17.5_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "17",
@@ -1475,11 +1745,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\17\\17.5\\17.5.2\\without_answer\\17.5.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/17/17.5/17.5_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Финансовая математика"
+    "task_type": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430"
   },
   {
     "task_id": "18",
@@ -1491,11 +1764,16 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.1\\18.1.1\\without_answer\\18.1.1_solve_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_2.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_3.png"
       ]
     },
     "score": 4,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1509,11 +1787,16 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.1\\18.1.2\\without_answer\\18.1.2_solve_part_1_estimate_4.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.1\\18.1.2\\without_answer\\18.1.2_solve_part_2_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_2.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_3.png"
       ]
     },
     "score": 4,
     "parts_count": 2,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1525,11 +1808,16 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.1\\18.1.3\\without_answer\\18.1.3_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_2.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_3.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1541,11 +1829,16 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.1\\18.1.4\\without_answer\\18.1.4_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_2.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_3.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1557,11 +1850,16 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.1\\18.1.5\\without_answer\\18.1.5_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_2.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.1\\18.1_solve_true_part_3.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1575,11 +1873,15 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.2\\18.2.1\\without_answer\\18.2.1_solve_part_1_estimate_4.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.2\\18.2.1\\without_answer\\18.2.1_solve_part_2_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.2\\18.2_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.2\\18.2_solve_true_part_2.png"
       ]
     },
     "score": 4,
     "parts_count": 2,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1591,11 +1893,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.2\\18.2.2\\without_answer\\18.2.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.2\\18.2_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.2\\18.2_solve_true_part_2.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1607,11 +1913,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.2\\18.2.3\\without_answer\\18.2.3_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.2\\18.2_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.2\\18.2_solve_true_part_2.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1623,11 +1933,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.3\\18.3.1\\without_answer\\18.3.1_solve_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.3/18.3_solve_true.png"
       ]
     },
     "score": 4,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1641,11 +1954,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.3\\18.3.2\\without_answer\\18.3.2_solve_part_1_estimate_3.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.3\\18.3.2\\without_answer\\18.3.2_solve_part_2_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.3/18.3_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 2,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1657,11 +1973,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.3\\18.3.3\\without_answer\\18.3.3_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.3/18.3_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1673,11 +1992,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.3\\18.3.4\\without_answer\\18.3.4_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.3/18.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1689,11 +2011,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.4\\18.4.1\\without_answer\\18.4.1_solve_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.4\\18.4_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.4\\18.4_solve_true_part_2.png"
       ]
     },
     "score": 4,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1709,11 +2035,15 @@
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.4\\18.4.2\\without_answer\\18.4.2_solve_part_1_estimate_3.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.4\\18.4.2\\without_answer\\18.4.2_solve_part_2_estimate_3.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.4\\18.4.2\\without_answer\\18.4.2_solve_part_3_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.4\\18.4_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.4\\18.4_solve_true_part_2.png"
       ]
     },
     "score": 3,
     "parts_count": 3,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1725,11 +2055,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.5\\18.5.1\\without_answer\\18.5.1_solve_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.5\\18.5_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.5\\18.5_solve_true_part_2.png"
       ]
     },
     "score": 4,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "18",
@@ -1741,11 +2075,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\18\\18.5\\18.5.2\\without_answer\\18.5.2_solve_estimate_0.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.5\\18.5_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/18/18.5\\18.5_solve_true_part_2.png"
       ]
     },
     "score": 0,
     "parts_count": 1,
-    "task_type": "Задача с параметром"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u043c"
   },
   {
     "task_id": "19",
@@ -1759,11 +2097,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.1\\19.1.1\\without_answer\\19.1.1_solve_part_1_estimate_4.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.1\\19.1.1\\without_answer\\19.1.1_solve_part_2_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.1/19.1_solve_true.png"
       ]
     },
     "score": 4,
     "parts_count": 2,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1775,11 +2116,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.1\\19.1.2\\without_answer\\19.1.2_solve_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.1/19.1_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1791,11 +2135,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.1\\19.1.3\\without_answer\\19.1.3_solve_estimate_3.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.1/19.1_solve_true.png"
       ]
     },
     "score": 3,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1807,11 +2154,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.1\\19.1.4\\without_answer\\19.1.4_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.1/19.1_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1823,11 +2173,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.1\\19.1.5\\without_answer\\19.1.5_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.1/19.1_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1839,11 +2192,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.2\\19.2.1\\without_answer\\19.2.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.2/19.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1855,11 +2211,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.2\\19.2.2\\without_answer\\19.2.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.2/19.2_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1873,11 +2232,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.2\\19.2.3\\without_answer\\19.2.3_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.2\\19.2.3\\without_answer\\19.2.3_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.2/19.2_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1889,11 +2251,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.3\\19.3.1\\without_answer\\19.3.1_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.3/19.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1905,11 +2270,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.3\\19.3.2\\without_answer\\19.3.2_solve_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.3/19.3_solve_true.png"
       ]
     },
     "score": 1,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1923,11 +2291,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.4\\19.4.1\\without_answer\\19.4.1_solve_part_1_estimate_4.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.4\\19.4.1\\without_answer\\19.4.1_solve_part_2_estimate_4.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.4/19.4_solve_true.png"
       ]
     },
     "score": 4,
     "parts_count": 2,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1939,11 +2310,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.4\\19.4.2\\without_answer\\19.4.2_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.4/19.4_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1955,11 +2329,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.4\\19.4.3\\without_answer\\19.4.3_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.4/19.4_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1971,11 +2348,14 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.4\\19.4.4\\without_answer\\19.4.4_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.4/19.4_solve_true.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -1987,11 +2367,15 @@
       ],
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.5\\19.5.1\\without_answer\\19.5.1_solve_estimate_2.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.5\\19.5_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.5\\19.5_solve_true_part_2.png"
       ]
     },
     "score": 2,
     "parts_count": 1,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   },
   {
     "task_id": "19",
@@ -2005,10 +2389,14 @@
       "without_answer": [
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.5\\19.5.2\\without_answer\\19.5.2_solve_part_1_estimate_1.png",
         "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark\\19\\19.5\\19.5.2\\without_answer\\19.5.2_solve_part_2_estimate_1.png"
+      ],
+      "with_true_solution": [
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.5\\19.5_solve_true_part_1.png",
+        "C:\\Users\\xpylb\\Documents\\augment-projects\\Auto check EGE math\\dataset_benchmark/19/19.5\\19.5_solve_true_part_2.png"
       ]
     },
     "score": 1,
     "parts_count": 2,
-    "task_type": "Задача по теории чисел"
+    "task_type": "\u0417\u0430\u0434\u0430\u0447\u0430 \u043f\u043e \u0442\u0435\u043e\u0440\u0438\u0438 \u0447\u0438\u0441\u0435\u043b"
   }
 ]

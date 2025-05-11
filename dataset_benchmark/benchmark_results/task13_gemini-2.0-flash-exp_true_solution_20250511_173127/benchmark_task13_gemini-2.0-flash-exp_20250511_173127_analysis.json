@@ -1,0 +1,66 @@
+{
+  "total_examples": 21,
+  "total_evaluations": 21,
+  "models": {
+    "google/gemini-2.0-flash-exp:free": {
+      "with_true_solution": {
+        "accuracy": 57.14285714285714,
+        "quality_score": 73.80952380952381,
+        "avg_score_distance": 0.5238095238095238,
+        "macro_precision": 57.72005772005772,
+        "macro_recall": 54.444444444444436,
+        "macro_f1": 53.703703703703695,
+        "per_score_metrics": {
+          "0": {
+            "precision": 66.66666666666666,
+            "recall": 33.33333333333333,
+            "f1": 44.44444444444444
+          },
+          "1": {
+            "precision": 63.63636363636363,
+            "recall": 70.0,
+            "f1": 66.66666666666666
+          },
+          "2": {
+            "precision": 42.857142857142854,
+            "recall": 60.0,
+            "f1": 50.0
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 2,
+            "1": 2,
+            "2": 2
+          },
+          "1": {
+            "0": 1,
+            "1": 7,
+            "2": 2
+          },
+          "2": {
+            "0": 0,
+            "1": 2,
+            "2": 3
+          }
+        },
+        "evaluations": 21,
+        "avg_evaluation_time": 10.526436703545707,
+        "avg_prompt_tokens": 2594.095238095238,
+        "avg_completion_tokens": 370.14285714285717,
+        "avg_total_tokens": 2964.2380952380954,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "summary": {
+    "avg_evaluation_time": 10.526436703545707,
+    "avg_prompt_tokens": 2594.095238095238,
+    "avg_completion_tokens": 370.14285714285717,
+    "avg_total_tokens": 2964.2380952380954,
+    "total_cost": 0.0,
+    "avg_quality_score": 0.7380952380952381
+  },
+  "task_type": "task_13",
+  "filename": "benchmark_task13_gemini-2.0-flash-exp_20250511_173127.json"
+}
