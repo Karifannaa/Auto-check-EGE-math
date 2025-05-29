@@ -133,8 +133,7 @@
 
 #### Локальный доступ
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````python
+```python
 from datasets import load_from_disk
 
 # Загрузка основного датасета
@@ -149,20 +148,17 @@ print(f"Solution ID: {example['solution_id']}")
 print(f"Task: {example['task_type']}")
 print(f"Score: {example['score']}")
 print(f"Images: {len(example['images_without_answer'])}")
-````
-</augment_code_snippet>
+```
 
 #### Анализ датасета
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````bash
+```bash
 # Анализ структуры датасета
 python analyze_dataset.py
 
 # Анализ конкретной версии
 python analyze_dataset.py dataset_benchmark_hf_updated
-````
-</augment_code_snippet>
+```
 
 ### Структура файлов датасета
 
@@ -575,8 +571,7 @@ python analyze_existing_results.py --compare-models
 
 #### 1. Инициализация
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````python
+```python
 # Создание экземпляра бенчмарка
 benchmark = ModelBenchmark(
     dataset_dir="dataset_benchmark_hf",
@@ -585,21 +580,18 @@ benchmark = ModelBenchmark(
     initial_delay=15,
     max_delay=120
 )
-````
-</augment_code_snippet>
+```
 
 #### 2. Фильтрация данных
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````python
+```python
 # Фильтрация по типу задачи
 filtered_data = benchmark.filter_dataset(task_id="13")
 
 # Ограничение количества примеров
 if max_examples:
     filtered_data = filtered_data[:max_examples]
-````
-</augment_code_snippet>
+```
 
 #### 3. Обработка изображений
 
@@ -622,8 +614,7 @@ if max_examples:
 
 #### 5. Вызов API модели
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````python
+```python
 # Вызов API с обработкой ошибок и повторными попытками
 response = await client.chat_completion(
     model=model_id,
@@ -632,15 +623,13 @@ response = await client.chat_completion(
     max_tokens=max_tokens,
     extra_body=extra_body  # Для thinking моделей
 )
-````
-</augment_code_snippet>
+```
 
 #### 6. Извлечение оценки
 
 Система использует регулярные выражения для извлечения оценки из ответа модели:
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````python
+```python
 # Паттерны для поиска оценки
 score_patterns = [
     r'итоговая оценка[\s\S]*?(\d+)\s*балл',
@@ -648,8 +637,7 @@ score_patterns = [
     r'(\d+)\s*балл',
     r'\[оценка\s*[:-]\s*(\d+)\]'
 ]
-````
-</augment_code_snippet>
+```
 
 ### Обработка ошибок и ограничений
 
@@ -672,8 +660,7 @@ score_patterns = [
 
 #### Основной файл результатов
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````json
+```json
 {
   "metadata": {
     "timestamp": "2025-01-11T15:30:45",
@@ -701,13 +688,11 @@ score_patterns = [
     }
   ]
 }
-````
-</augment_code_snippet>
+```
 
 #### Файл анализа
 
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````json
+```json
 {
   "total_examples": 21,
   "models": {
@@ -728,23 +713,20 @@ score_patterns = [
     }
   }
 }
-````
-</augment_code_snippet>
+```
 
 ### Процедуры валидации
 
 #### Валидация датасета
 
 1. **Проверка целостности данных**:
-   <augment_code_snippet path="README.md" mode="EXCERPT">
-   ````bash
+   ```bash
    # Проверка структуры датасета
    python dataset_benchmark/verify_dataset.py
 
    # Анализ метаданных
    python dataset_benchmark/generate_metadata.py --verify
-   ````
-   </augment_code_snippet>
+   ```
 
 2. **Валидация изображений**:
    - Проверка существования всех файлов изображений
@@ -794,28 +776,22 @@ score_patterns = [
 #### Для исследователей
 
 1. **Начальное тестирование**:
-   <augment_code_snippet path="README.md" mode="EXCERPT">
-   ````bash
+   ```bash
    # Быстрый тест с бесплатными моделями
    python run_task13_benchmark.py --models "moonshotai/kimi-vl-a3b-thinking:free" --max-examples 5
-   ````
-   </augment_code_snippet>
+   ```
 
 2. **Полное исследование**:
-   <augment_code_snippet path="README.md" mode="EXCERPT">
-   ````bash
+   ```bash
    # Полный бенчмарк всех задач
    python run_full_benchmark.py --models "google/gemini-2.0-flash-exp" "gpt-4o"
-   ````
-   </augment_code_snippet>
+   ```
 
 3. **Анализ результатов**:
-   <augment_code_snippet path="README.md" mode="EXCERPT">
-   ````bash
+   ```bash
    # Сравнительный анализ
    python analyze_existing_results.py --compare-models
-   ````
-   </augment_code_snippet>
+   ```
 
 #### Для разработчиков
 
@@ -844,8 +820,7 @@ score_patterns = [
 ### Команды для быстрого старта
 
 #### Анализ датасета
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````bash
+```bash
 # Общая статистика
 python analyze_dataset.py
 
@@ -854,12 +829,10 @@ python dataset_benchmark/verify_dataset.py
 
 # Генерация отчета
 python dataset_benchmark/debug_paths.py
-````
-</augment_code_snippet>
+```
 
 #### Запуск бенчмарков
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````bash
+```bash
 # Быстрый тест (5 минут)
 python run_task13_benchmark.py --models "moonshotai/kimi-vl-a3b-thinking:free" --max-examples 3
 
@@ -868,12 +841,10 @@ python run_full_benchmark.py --models "qwen/qwen2.5-vl-32b-instruct:free" --max-
 
 # Полный тест (несколько часов)
 python run_full_benchmark.py --models "google/gemini-2.0-flash-exp" "gpt-4o"
-````
-</augment_code_snippet>
+```
 
 #### Анализ результатов
-<augment_code_snippet path="README.md" mode="EXCERPT">
-````bash
+```bash
 # Просмотр последних результатов
 ls -la dataset_benchmark/benchmark_results/
 
@@ -882,8 +853,7 @@ python analyze_existing_results.py --file benchmark_results/benchmark_task13_*.j
 
 # Сравнение моделей
 python analyze_existing_results.py --compare-models
-````
-</augment_code_snippet>
+```
 
 ### Файлы конфигурации и метаданных
 
