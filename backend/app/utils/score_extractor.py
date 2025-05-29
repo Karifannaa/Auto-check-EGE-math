@@ -12,16 +12,25 @@ logger = logging.getLogger(__name__)
 def extract_score_from_text(result_text: str, task_type: str = None) -> int:
     """
     Extract the score from the model's response text.
-    
+
     Args:
         result_text: The text response from the model
         task_type: Optional task type for validation (e.g., "task_13")
-        
+
     Returns:
         Extracted score as an integer
     """
+    # Input validation
+    if not isinstance(result_text, str):
+        logger.error(f"Invalid result_text type: {type(result_text)}")
+        return 0
+
+    if not result_text.strip():
+        logger.warning("Empty result_text provided")
+        return 0
+
     score = 0
-    
+
     try:
         # First approach: Semantic section detection - look for the "Итоговая оценка" section
         logger.info("Attempting to extract score using semantic section detection")
@@ -124,27 +133,33 @@ def extract_score_from_text(result_text: str, task_type: str = None) -> int:
                     logger.info("Found score 0 from direct text mention")
 
         # Validate the score is within expected range for specific task types
-        if task_type == "task_13" and score > 2:
-            logger.warning(f"Score {score} exceeds maximum of 2 for task_13, capping at 2")
-            score = 2
-        elif task_type == "task_14" and score > 3:
-            logger.warning(f"Score {score} exceeds maximum of 3 for task_14, capping at 3")
-            score = 3
-        elif task_type == "task_15" and score > 2:
-            logger.warning(f"Score {score} exceeds maximum of 2 for task_15, capping at 2")
-            score = 2
-        elif task_type == "task_16" and score > 3:
-            logger.warning(f"Score {score} exceeds maximum of 3 for task_16, capping at 3")
-            score = 3
-        elif task_type == "task_17" and score > 3:
-            logger.warning(f"Score {score} exceeds maximum of 3 for task_17, capping at 3")
-            score = 3
-        elif task_type == "task_18" and score > 4:
-            logger.warning(f"Score {score} exceeds maximum of 4 for task_18, capping at 4")
-            score = 4
-        elif task_type == "task_19" and score > 4:
-            logger.warning(f"Score {score} exceeds maximum of 4 for task_19, capping at 4")
-            score = 4
+        # Define maximum scores for each task type
+        max_scores = {
+            "task_13": 2,
+            "task_14": 3,
+            "task_15": 2,
+            "task_16": 2,  # Fixed: Economic task has maximum 2 points
+            "task_17": 3,
+            "task_18": 4,
+            "task_19": 4
+        }
+
+        if task_type and task_type in max_scores:
+            max_score = max_scores[task_type]
+            if score > max_score:
+                logger.warning(f"Score {score} exceeds maximum of {max_score} for {task_type}, capping at {max_score}")
+                score = max_score
+            elif score < 0:
+                logger.warning(f"Score {score} is negative for {task_type}, setting to 0")
+                score = 0
+
+        # Ensure score is a valid integer
+        if not isinstance(score, int):
+            try:
+                score = int(score)
+            except (ValueError, TypeError):
+                logger.error(f"Could not convert score to integer: {score}")
+                score = 0
 
     except Exception as e:
         logger.error(f"Error extracting score: {str(e)}")

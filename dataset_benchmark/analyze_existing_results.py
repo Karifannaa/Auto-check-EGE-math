@@ -87,7 +87,7 @@ class ResultsAnalyzer:
             'task_13': 2,
             'task_14': 3,
             'task_15': 2,
-            'task_16': 3,
+            'task_16': 2,  # Fixed: Economic task has maximum 2 points
             'task_17': 3,
             'task_18': 4,
             'task_19': 4
@@ -98,10 +98,20 @@ class ResultsAnalyzer:
         df['max_score'] = df['task_type'].map(lambda x: max_scores.get(x, 4))  # Default to 4 if task_type not found
         df_valid['max_score'] = df_valid['task_type'].map(lambda x: max_scores.get(x, 4))
 
-        # Now calculate normalized distance
-        df['normalized_distance'] = df_valid.apply(
-            lambda row: abs(row['score'] - row['expected_score']) / row['max_score'], axis=1
-        )
+        # Now calculate normalized distance with safe division
+        if len(df_valid) > 0:
+            df['normalized_distance'] = float('nan')  # Initialize with NaN
+            df_valid['normalized_distance'] = df_valid.apply(
+                lambda row: abs(row['score'] - row['expected_score']) / row['max_score']
+                if row['max_score'] > 0 else 0.0, axis=1
+            )
+
+            # Copy values to df where indices match
+            for idx in df_valid.index:
+                if idx in df.index:
+                    df.at[idx, 'normalized_distance'] = df_valid.at[idx, 'normalized_distance']
+        else:
+            df['normalized_distance'] = float('nan')
 
         # Calculate quality score (1 - normalized_distance)
         # This gives a score from 0 to 1, where 1 is perfect prediction and 0 is worst possible prediction
@@ -152,10 +162,13 @@ class ResultsAnalyzer:
                 false_positives = sum((group['score'] == score_value) & (group['expected_score'] != score_value))
                 false_negatives = sum((group['score'] != score_value) & (group['expected_score'] == score_value))
 
-                # Calculate precision, recall, and F1
-                precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
-                recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
-                f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+                # Calculate precision, recall, and F1 with safe division
+                try:
+                    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0.0
+                    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0.0
+                    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+                except (ZeroDivisionError, TypeError, ValueError):
+                    precision = recall = f1 = 0.0
 
                 precision_recall_f1[str(score_value)] = {
                     "precision": precision * 100,  # Convert to percentage
@@ -163,13 +176,16 @@ class ResultsAnalyzer:
                     "f1": f1 * 100                 # Convert to percentage
                 }
 
-            # Calculate macro-average precision, recall, and F1
+            # Calculate macro-average precision, recall, and F1 with safe division
             if precision_recall_f1:
-                macro_precision = sum(item["precision"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
-                macro_recall = sum(item["recall"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
-                macro_f1 = sum(item["f1"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                try:
+                    macro_precision = sum(item["precision"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                    macro_recall = sum(item["recall"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                    macro_f1 = sum(item["f1"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                except (ZeroDivisionError, TypeError, ValueError):
+                    macro_precision = macro_recall = macro_f1 = 0.0
             else:
-                macro_precision = macro_recall = macro_f1 = 0
+                macro_precision = macro_recall = macro_f1 = 0.0
 
             # Create confusion matrix
             if len(unique_scores) > 0:

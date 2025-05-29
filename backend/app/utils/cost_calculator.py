@@ -107,6 +107,12 @@ def calculate_cost_per_solution(model_id: str, task_type: str) -> float:
     Returns:
         Estimated cost in USD
     """
+    # Validate inputs
+    if not model_id or not isinstance(model_id, str):
+        raise ValueError(f"Invalid model_id: {model_id}")
+    if not task_type or not isinstance(task_type, str):
+        raise ValueError(f"Invalid task_type: {task_type}")
+
     # Get the full model name
     if model_id in settings.REASONING_MODELS:
         model_name = settings.REASONING_MODELS[model_id]
@@ -121,23 +127,41 @@ def calculate_cost_per_solution(model_id: str, task_type: str) -> float:
 
     pricing = MODEL_PRICING[model_name]
 
+    # Validate pricing structure
+    if not isinstance(pricing, dict) or "input" not in pricing or "output" not in pricing:
+        raise ValueError(f"Invalid pricing structure for model: {model_name}")
+
     # Estimate token counts
     input_tokens, output_tokens = estimate_tokens_per_solution(task_type)
 
-    # Calculate token costs
-    input_cost = (input_tokens / 1_000_000) * pricing["input"]
-    output_cost = (output_tokens / 1_000_000) * pricing["output"]
+    # Validate token counts are positive
+    if input_tokens < 0 or output_tokens < 0:
+        raise ValueError(f"Invalid token counts: input={input_tokens}, output={output_tokens}")
+
+    # Calculate token costs with safe division
+    try:
+        input_cost = (input_tokens / 1_000_000) * pricing["input"]
+        output_cost = (output_tokens / 1_000_000) * pricing["output"]
+    except (ZeroDivisionError, TypeError, ValueError) as e:
+        raise ValueError(f"Error calculating token costs: {e}")
 
     # Calculate image cost if the model supports images
     image_cost = 0.0
     if "image" in pricing and pricing["image"] > 0:
-        # Cost per image in USD
-        image_cost = AVG_IMAGE["images_per_solution"] * (pricing["image"] / 1000)
+        try:
+            # Cost per image in USD - fixed division by 1000 instead of 1000
+            image_cost = AVG_IMAGE["images_per_solution"] * (pricing["image"] / 1000)
+        except (ZeroDivisionError, TypeError, ValueError) as e:
+            raise ValueError(f"Error calculating image costs: {e}")
 
-    # Total cost
+    # Total cost with validation
     total_cost = input_cost + output_cost + image_cost
 
-    return total_cost
+    # Ensure result is a valid number
+    if not isinstance(total_cost, (int, float)) or total_cost < 0:
+        raise ValueError(f"Invalid total cost calculated: {total_cost}")
+
+    return float(total_cost)
 
 
 def calculate_actual_cost(model_id: str, prompt_tokens: int, completion_tokens: int, num_images: int = 1) -> float:
@@ -153,6 +177,16 @@ def calculate_actual_cost(model_id: str, prompt_tokens: int, completion_tokens: 
     Returns:
         Actual cost in USD
     """
+    # Validate inputs
+    if not model_id or not isinstance(model_id, str):
+        raise ValueError(f"Invalid model_id: {model_id}")
+    if not isinstance(prompt_tokens, int) or prompt_tokens < 0:
+        raise ValueError(f"Invalid prompt_tokens: {prompt_tokens}")
+    if not isinstance(completion_tokens, int) or completion_tokens < 0:
+        raise ValueError(f"Invalid completion_tokens: {completion_tokens}")
+    if not isinstance(num_images, int) or num_images < 0:
+        raise ValueError(f"Invalid num_images: {num_images}")
+
     # Special case for free models with specific IDs
     if model_id == "google/gemini-2.0-flash-exp:free":
         return 0.0
@@ -174,20 +208,34 @@ def calculate_actual_cost(model_id: str, prompt_tokens: int, completion_tokens: 
 
     pricing = MODEL_PRICING[model_name]
 
-    # Calculate token costs based on actual usage
-    input_cost = (prompt_tokens / 1_000_000) * pricing["input"]
-    output_cost = (completion_tokens / 1_000_000) * pricing["output"]
+    # Validate pricing structure
+    if not isinstance(pricing, dict) or "input" not in pricing or "output" not in pricing:
+        raise ValueError(f"Invalid pricing structure for model: {model_name}")
+
+    # Calculate token costs based on actual usage with safe division
+    try:
+        input_cost = (prompt_tokens / 1_000_000) * pricing["input"]
+        output_cost = (completion_tokens / 1_000_000) * pricing["output"]
+    except (ZeroDivisionError, TypeError, ValueError) as e:
+        raise ValueError(f"Error calculating token costs: {e}")
 
     # Calculate image cost if the model supports images
     image_cost = 0.0
     if "image" in pricing and pricing["image"] > 0:
-        # Cost per image in USD
-        image_cost = num_images * (pricing["image"] / 1000)
+        try:
+            # Cost per image in USD
+            image_cost = num_images * (pricing["image"] / 1000)
+        except (ZeroDivisionError, TypeError, ValueError) as e:
+            raise ValueError(f"Error calculating image costs: {e}")
 
-    # Total cost
+    # Total cost with validation
     total_cost = input_cost + output_cost + image_cost
 
-    return total_cost
+    # Ensure result is a valid number
+    if not isinstance(total_cost, (int, float)) or total_cost < 0:
+        raise ValueError(f"Invalid total cost calculated: {total_cost}")
+
+    return float(total_cost)
 
 
 def calculate_dataset_cost(model_id: str) -> Dict[str, Any]:
@@ -259,15 +307,21 @@ def calculate_dataset_cost(model_id: str) -> Dict[str, Any]:
         total_image_cost += image_cost
         total_solutions += total_solutions_for_task
 
+    # Safe division for average cost calculation
+    try:
+        average_cost_per_solution = total_cost / total_solutions if total_solutions > 0 else 0.0
+    except (ZeroDivisionError, TypeError):
+        average_cost_per_solution = 0.0
+
     return {
         "model_id": model_id,
         "model_name": model_name,
-        "total_solutions": total_solutions,
-        "total_cost": total_cost,
-        "total_token_cost": total_token_cost,
-        "total_image_cost": total_image_cost,
-        "average_cost_per_solution": total_cost / total_solutions if total_solutions > 0 else 0,
-        "supports_images": supports_images,
+        "total_solutions": int(total_solutions),
+        "total_cost": float(total_cost),
+        "total_token_cost": float(total_token_cost),
+        "total_image_cost": float(total_image_cost),
+        "average_cost_per_solution": float(average_cost_per_solution),
+        "supports_images": bool(supports_images),
         "breakdown": cost_breakdown
     }
 

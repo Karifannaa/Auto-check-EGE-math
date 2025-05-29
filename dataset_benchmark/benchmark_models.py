@@ -32,16 +32,14 @@ from app.utils.image_utils import prepare_image_for_api
 from app.api.openrouter_client import OpenRouterClient
 from app.core.config import settings
 
-# Import score extractor or define it inline if import fails
+# Import score extractor - use centralized version for consistency
 try:
     from app.utils.score_extractor import extract_score_from_text
 except ImportError:
-    import re
-    import logging
-
+    # Fallback implementation if import fails
     def extract_score_from_text(result_text: str, task_type: str = None) -> int:
         """
-        Extract the score from the model's response text.
+        Fallback score extraction function.
 
         Args:
             result_text: The text response from the model
@@ -50,56 +48,47 @@ except ImportError:
         Returns:
             Extracted score as an integer
         """
-        score = 0
+        import re
 
+        if not isinstance(result_text, str) or not result_text.strip():
+            return 0
+
+        score = 0
         try:
-            # Look for explicit score sections
-            score_sections = [
+            # Simple pattern matching for score extraction
+            patterns = [
                 r'итоговая оценка[\s\S]*?(\d+)\s*балл',
-                r'оценка[\s\S]*?(\d+)\s*балл',
-                r'\[оценка[\s\S]*?(\d+)\s*балл',
-                r'итоговый балл[\s\S]*?(\d+)',
-                r'итоговая оценка[\s\S]*?(\d+)',
                 r'оценка:\s*(\d+)',
-                r'выставляется\s*(\d+)\s*балл'
+                r'(\d+)\s*балл'
             ]
 
-            for pattern in score_sections:
+            for pattern in patterns:
                 matches = re.findall(pattern, result_text.lower())
                 if matches:
-                    score = int(matches[-1])  # Use the last match as it's likely the final score
-                    logger.info(f"Found score {score} using pattern: {pattern}")
+                    score = int(matches[-1])
                     break
 
-            # Look for specific formats in the entire text
-            if score == 0:
-                # Look for patterns like "1 балл" or "2 балла" in the explanation
-                score_patterns = [
-                    r'(\d+)\s*балл',  # "2 балла"
-                    r'оценка\s*[:-]\s*(\d+)',  # "Оценка: 2"
-                    r'\[(\d+)\s*балл',  # "[2 балла"
-                    r'\[оценка\s*[:-]\s*(\d+)\]'  # "[Оценка: 2]"
-                ]
+            # Basic validation
+            if score < 0:
+                score = 0
+            elif task_type == "task_13" and score > 2:
+                score = 2
+            elif task_type == "task_14" and score > 3:
+                score = 3
+            elif task_type == "task_15" and score > 2:
+                score = 2
+            elif task_type == "task_16" and score > 2:  # Fixed: Economic task max 2 points
+                score = 2
+            elif task_type == "task_17" and score > 3:
+                score = 3
+            elif task_type == "task_18" and score > 4:
+                score = 4
+            elif task_type == "task_19" and score > 4:
+                score = 4
+            elif score > 4:  # Maximum possible score
+                score = 4
 
-                for pattern in score_patterns:
-                    matches = re.findall(pattern, result_text.lower())
-                    if matches:
-                        score = int(matches[-1])
-                        logger.info(f"Found score {score} using pattern: {pattern}")
-                        break
-
-            # Validate the score based on task type
-            if task_type and task_type.startswith("task_"):
-                task_id = task_type.split("_")[1]
-                if task_id == "13" and score > 2:
-                    logger.warning(f"Score {score} exceeds maximum of 2 for task_13, capping at 2")
-                    score = 2
-                elif task_id == "14" and score > 3:
-                    logger.warning(f"Score {score} exceeds maximum of 3 for task_14, capping at 3")
-                    score = 3
-
-        except Exception as e:
-            logger.error(f"Error extracting score: {str(e)}")
+        except (ValueError, TypeError):
             score = 0
 
         return score
@@ -710,7 +699,7 @@ class ModelBenchmark:
             'task_13': 2,
             'task_14': 3,
             'task_15': 2,
-            'task_16': 3,
+            'task_16': 2,  # Fixed: Economic task has maximum 2 points
             'task_17': 3,
             'task_18': 4,
             'task_19': 4
@@ -722,11 +711,12 @@ class ModelBenchmark:
         # Add max_score to df_valid as well
         df_valid['max_score'] = df_valid['task_type'].map(lambda x: max_scores.get(x, 4))  # Default to 4 if task_type not found
 
-        # Handle empty df_valid case
+        # Handle empty df_valid case with safe division
         if len(df_valid) > 0:
-            # Create normalized_distance column in df_valid first
+            # Create normalized_distance column in df_valid first with safe division
             df_valid['normalized_distance'] = df_valid.apply(
-                lambda row: abs(row['score'] - row['expected_score']) / row['max_score'], axis=1
+                lambda row: abs(row['score'] - row['expected_score']) / row['max_score']
+                if row['max_score'] > 0 else 0.0, axis=1
             )
 
             # Then copy values to df where indices match
@@ -800,10 +790,13 @@ class ModelBenchmark:
                 false_positives = sum((group['score'] == score_value) & (group['expected_score'] != score_value))
                 false_negatives = sum((group['score'] != score_value) & (group['expected_score'] == score_value))
 
-                # Calculate precision, recall, and F1
-                precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
-                recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
-                f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+                # Calculate precision, recall, and F1 with safe division
+                try:
+                    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0.0
+                    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0.0
+                    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+                except (ZeroDivisionError, TypeError, ValueError):
+                    precision = recall = f1 = 0.0
 
                 precision_recall_f1[str(score_value)] = {
                     "precision": precision * 100,  # Convert to percentage
@@ -811,13 +804,16 @@ class ModelBenchmark:
                     "f1": f1 * 100                 # Convert to percentage
                 }
 
-            # Calculate macro-average precision, recall, and F1
+            # Calculate macro-average precision, recall, and F1 with safe division
             if precision_recall_f1:
-                macro_precision = sum(item["precision"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
-                macro_recall = sum(item["recall"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
-                macro_f1 = sum(item["f1"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                try:
+                    macro_precision = sum(item["precision"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                    macro_recall = sum(item["recall"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                    macro_f1 = sum(item["f1"] for item in precision_recall_f1.values()) / len(precision_recall_f1)
+                except (ZeroDivisionError, TypeError, ValueError):
+                    macro_precision = macro_recall = macro_f1 = 0.0
             else:
-                macro_precision = macro_recall = macro_f1 = 0
+                macro_precision = macro_recall = macro_f1 = 0.0
 
             # Create confusion matrix
             if len(unique_scores) > 0:
