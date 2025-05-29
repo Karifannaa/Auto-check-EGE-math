@@ -9,6 +9,11 @@ from typing import Dict, List, Optional, Union, Any
 from app.utils.specialized_prompts import (
     TASK_13_PROMPTS,
     TASK_14_PROMPTS,
+    TASK_15_PROMPTS,
+    TASK_16_PROMPTS,
+    TASK_17_PROMPTS,
+    TASK_18_PROMPTS,
+    TASK_19_PROMPTS,
     DEFAULT_PROMPT_VARIANTS,
     AVAILABLE_PROMPT_VARIANTS
 )
@@ -60,126 +65,80 @@ class PromptGenerator:
             # Fall back to basic prompt if variant not found
             return TASK_14_PROMPTS["basic"]
 
-    def _get_task_15_template(self) -> str:
-        """Get template for Task 15 (inequalities)."""
-        return """
-Ты - эксперт по проверке задач ЕГЭ по математике. Проанализируй решение неравенства.
+    def _get_task_15_template(self, variant: str = "basic") -> str:
+        """Get template for Task 15 (inequalities).
 
-Задача: {task_description}
+        Args:
+            variant: Prompt variant to use ("basic", "detailed", or "with_solution")
 
-Критерии оценки:
-- 2 балла: Обоснованно получен верный ответ
-- 1 балл: Получен неверный ответ из-за вычислительной ошибки, но при этом имеется верная последовательность всех шагов решения
-- 0 баллов: Решение не соответствует ни одному из критериев, перечисленных выше
+        Returns:
+            Template string for the specified variant
+        """
+        if variant in TASK_15_PROMPTS:
+            return TASK_15_PROMPTS[variant]
+        else:
+            # Fall back to basic prompt if variant not found
+            return TASK_15_PROMPTS["basic"]
 
-Максимальный балл: 2
+    def _get_task_16_template(self, variant: str = "basic") -> str:
+        """Get template for Task 16 (economic problems).
 
-Проанализируй решение и оцени его по указанным критериям. Предоставь подробное обоснование своей оценки, указав на конкретные элементы решения.
+        Args:
+            variant: Prompt variant to use ("basic", "detailed", "with_solution", or "image_examples")
 
-Твой ответ должен содержать:
-1. Анализ метода решения неравенства
-2. Проверку правильности всех преобразований
-3. Итоговую оценку (0, 1 или 2 балла)
-4. Обоснование выставленной оценки
-"""
+        Returns:
+            Template string for the specified variant
+        """
+        if variant in TASK_16_PROMPTS:
+            return TASK_16_PROMPTS[variant]
+        else:
+            # Fall back to basic prompt if variant not found
+            return TASK_16_PROMPTS["basic"]
 
-    def _get_task_16_template(self) -> str:
-        """Get template for Task 16 (planimetry)."""
-        return """
-Ты - эксперт по проверке задач ЕГЭ по математике. Проанализируй решение планиметрической задачи.
+    def _get_task_17_template(self, variant: str = "basic") -> str:
+        """Get template for Task 17 (planimetry with proof).
 
-Задача: {task_description}
+        Args:
+            variant: Prompt variant to use ("basic", "detailed", "with_solution", or "image_examples")
 
-Критерии оценки:
-- 3 балла: Обоснованно получен верный ответ
-- 2 балла: Получен неверный ответ из-за вычислительной ошибки, но при этом имеется верная последовательность всех шагов решения
-- 1 балл: Имеется верный ход решения, но решение не доведено до конца
-- 0 баллов: Решение не соответствует ни одному из критериев, перечисленных выше
+        Returns:
+            Template string for the specified variant
+        """
+        if variant in TASK_17_PROMPTS:
+            return TASK_17_PROMPTS[variant]
+        else:
+            # Fall back to basic prompt if variant not found
+            return TASK_17_PROMPTS["basic"]
 
-Максимальный балл: 3
+    def _get_task_18_template(self, variant: str = "basic") -> str:
+        """Get template for Task 18 (parameter problems).
 
-Проанализируй решение и оцени его по указанным критериям. Предоставь подробное обоснование своей оценки, указав на конкретные элементы решения.
+        Args:
+            variant: Prompt variant to use ("basic", "detailed", "with_solution", or "image_examples")
 
-Твой ответ должен содержать:
-1. Анализ геометрических утверждений и их обоснованности
-2. Проверку правильности вычислений
-3. Итоговую оценку (0, 1, 2 или 3 балла)
-4. Обоснование выставленной оценки
-"""
+        Returns:
+            Template string for the specified variant
+        """
+        if variant in TASK_18_PROMPTS:
+            return TASK_18_PROMPTS[variant]
+        else:
+            # Fall back to basic prompt if variant not found
+            return TASK_18_PROMPTS["basic"]
 
-    def _get_task_17_template(self) -> str:
-        """Get template for Task 17 (planimetry with proof)."""
-        return """
-Ты - эксперт по проверке задач ЕГЭ по математике. Проанализируй решение планиметрической задачи с доказательством.
+    def _get_task_19_template(self, variant: str = "basic") -> str:
+        """Get template for Task 19 (number theory).
 
-Задача: {task_description}
+        Args:
+            variant: Prompt variant to use ("basic", "detailed", "with_solution", or "image_examples")
 
-Критерии оценки:
-- 3 балла: Имеется верное доказательство утверждения пункта а и обоснованно получен верный ответ в пункте б
-- 2 балла: Обоснованно получен верный ответ в пункте б ИЛИ имеется верное доказательство утверждения пункта а и при обоснованном решении пункта б получен неверный ответ из-за арифметической ошибки
-- 1 балл: Имеется верное доказательство утверждения пункта а, ИЛИ при обоснованном решении пункта б получен неверный ответ из-за арифметической ошибки, ИЛИ обоснованно получен верный ответ в пункте б с использованием утверждения пункта а, при этом пункт а не выполнен
-- 0 баллов: Решение не соответствует ни одному из критериев, перечисленных выше
-
-Максимальный балл: 3
-
-Проанализируй решение и оцени его по указанным критериям. Предоставь подробное обоснование своей оценки, указав на конкретные элементы решения.
-
-Твой ответ должен содержать:
-1. Анализ доказательства в пункте а
-2. Анализ решения в пункте б
-3. Итоговую оценку (0, 1, 2 или 3 балла)
-4. Обоснование выставленной оценки
-"""
-
-    def _get_task_18_template(self) -> str:
-        """Get template for Task 18 (parameter problems)."""
-        return """
-Ты - эксперт по проверке задач ЕГЭ по математике. Проанализируй решение задачи с параметром.
-
-Задача: {task_description}
-
-Критерии оценки:
-- 4 балла: Обоснованно получен верный ответ
-- 3 балла: Верно обоснованы все случаи, но в одном из них допущена вычислительная ошибка, не нарушающая общей логики решения, в результате чего получен неверный ответ
-- 2 балла: Верно обоснованы 2 случая из 3 возможных
-- 1 балл: Верно обоснован 1 случай из 3 возможных
-- 0 баллов: Решение не соответствует ни одному из критериев, перечисленных выше
-
-Максимальный балл: 4
-
-Проанализируй решение и оцени его по указанным критериям. Предоставь подробное обоснование своей оценки, указав на конкретные элементы решения.
-
-Твой ответ должен содержать:
-1. Анализ рассмотренных случаев
-2. Проверку правильности решения для каждого случая
-3. Итоговую оценку (0, 1, 2, 3 или 4 балла)
-4. Обоснование выставленной оценки
-"""
-
-    def _get_task_19_template(self) -> str:
-        """Get template for Task 19 (number theory)."""
-        return """
-Ты - эксперт по проверке задач ЕГЭ по математике. Проанализируй решение задачи по теории чисел.
-
-Задача: {task_description}
-
-Критерии оценки:
-- 4 балла: Верно получены все перечисленные в условии объекты
-- 3 балла: Верно получено два из трех перечисленных в условии объектов
-- 2 балла: Верно получен один из трех перечисленных в условии объектов
-- 1 балл: В решении имеются верные рассуждения, но ни один из перечисленных в условии объектов не получен
-- 0 баллов: Решение не соответствует ни одному из критериев, перечисленных выше
-
-Максимальный балл: 4
-
-Проанализируй решение и оцени его по указанным критериям. Предоставь подробное обоснование своей оценки, указав на конкретные элементы решения.
-
-Твой ответ должен содержать:
-1. Анализ метода решения
-2. Проверку правильности всех полученных объектов
-3. Итоговую оценку (0, 1, 2, 3 или 4 балла)
-4. Обоснование выставленной оценки
-"""
+        Returns:
+            Template string for the specified variant
+        """
+        if variant in TASK_19_PROMPTS:
+            return TASK_19_PROMPTS[variant]
+        else:
+            # Fall back to basic prompt if variant not found
+            return TASK_19_PROMPTS["basic"]
 
     def get_prompt_text(
         self,
@@ -204,14 +163,24 @@ class PromptGenerator:
             # Use default variant for this task type
             prompt_variant = DEFAULT_PROMPT_VARIANTS.get(task_type, "basic")
 
-        # For task_13 and task_14, we have specialized prompts with variants
+        # All task types now have specialized prompts with variants
         if task_type == "task_13":
             template = self._get_task_13_template(prompt_variant)
         elif task_type == "task_14":
             template = self._get_task_14_template(prompt_variant)
+        elif task_type == "task_15":
+            template = self._get_task_15_template(prompt_variant)
+        elif task_type == "task_16":
+            template = self._get_task_16_template(prompt_variant)
+        elif task_type == "task_17":
+            template = self._get_task_17_template(prompt_variant)
+        elif task_type == "task_18":
+            template = self._get_task_18_template(prompt_variant)
+        elif task_type == "task_19":
+            template = self._get_task_19_template(prompt_variant)
         else:
-            # For other task types, use the standard template
-            template = self.templates[task_type]
+            # Fallback for unknown task types
+            template = self.templates.get(task_type, "Unknown task type: {task_description}")
 
         return template
 
@@ -244,10 +213,10 @@ class PromptGenerator:
             # Use default variant for this task type
             prompt_variant = DEFAULT_PROMPT_VARIANTS.get(task_type, "basic")
 
-        # For task_13 and task_14, we have specialized prompts with variants
+        # All task types now have specialized prompts with variants
         if task_type == "task_13":
             # If include_examples is True, use the image_examples variant
-            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS[task_type]:
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS.get(task_type, []):
                 template = self._get_task_13_template("image_examples")
                 # Set prompt_variant to image_examples to avoid adding examples twice
                 prompt_variant = "image_examples"
@@ -255,15 +224,45 @@ class PromptGenerator:
                 template = self._get_task_13_template(prompt_variant)
         elif task_type == "task_14":
             # If include_examples is True, use the image_examples variant
-            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS[task_type]:
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS.get(task_type, []):
                 template = self._get_task_14_template("image_examples")
                 # Set prompt_variant to image_examples to avoid adding examples twice
                 prompt_variant = "image_examples"
             else:
                 template = self._get_task_14_template(prompt_variant)
+        elif task_type == "task_15":
+            template = self._get_task_15_template(prompt_variant)
+        elif task_type == "task_16":
+            # If include_examples is True, use the image_examples variant if available
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS.get(task_type, []):
+                template = self._get_task_16_template("image_examples")
+                prompt_variant = "image_examples"
+            else:
+                template = self._get_task_16_template(prompt_variant)
+        elif task_type == "task_17":
+            # If include_examples is True, use the image_examples variant if available
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS.get(task_type, []):
+                template = self._get_task_17_template("image_examples")
+                prompt_variant = "image_examples"
+            else:
+                template = self._get_task_17_template(prompt_variant)
+        elif task_type == "task_18":
+            # If include_examples is True, use the image_examples variant if available
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS.get(task_type, []):
+                template = self._get_task_18_template("image_examples")
+                prompt_variant = "image_examples"
+            else:
+                template = self._get_task_18_template(prompt_variant)
+        elif task_type == "task_19":
+            # If include_examples is True, use the image_examples variant if available
+            if include_examples and "image_examples" in AVAILABLE_PROMPT_VARIANTS.get(task_type, []):
+                template = self._get_task_19_template("image_examples")
+                prompt_variant = "image_examples"
+            else:
+                template = self._get_task_19_template(prompt_variant)
         else:
-            # For other task types, use the standard template
-            template = self.templates[task_type]
+            # Fallback for unknown task types
+            template = self.templates.get(task_type, "Unknown task type: {task_description}")
 
         # Format with task description (use default text if empty)
         if not task_description.strip():
@@ -272,7 +271,7 @@ class PromptGenerator:
         prompt = template.format(task_description=task_description)
 
         # Add examples if requested and we're not already using a template with examples
-        if include_examples and task_type != "task_13" and prompt_variant not in ["with_examples", "image_examples"]:
+        if include_examples and task_type not in ["task_13", "task_14"] and prompt_variant not in ["with_examples", "image_examples"]:
             examples_text = "\n\nПримеры оценивания:\n"
             if examples:
                 for i, example in enumerate(examples, 1):
@@ -398,8 +397,8 @@ class PromptGenerator:
         # Create content list with prompt and images
         content = [{"type": "text", "text": prompt}]
 
-        # Add example images if requested and task_type is task_13 or task_14 and we're using the image_examples prompt
-        if include_examples and (task_type == "task_13" or task_type == "task_14") and prompt_variant == "image_examples":
+        # Add example images if requested and task_type supports image_examples and we're using the image_examples prompt
+        if include_examples and task_type in ["task_13", "task_14"] and prompt_variant == "image_examples":
             import os
             from app.utils.image_utils import prepare_image_for_api
 
@@ -487,7 +486,7 @@ class PromptGenerator:
         # Add correct solution image if provided
         if correct_solution_image:
             # Add a separator after examples if they were included
-            if include_examples and (task_type == "task_13" or task_type == "task_14") and prompt_variant == "image_examples":
+            if include_examples and task_type in ["task_13", "task_14"] and prompt_variant == "image_examples":
                 content.append({"type": "text", "text": "\n\n## Задание для оценки:\n\nТеперь, когда ты изучил примеры, переходим к заданию, которое нужно оценить.\n\n"})
 
             content.append(correct_solution_image)
@@ -495,7 +494,7 @@ class PromptGenerator:
             content.append({"type": "text", "text": "\n\nВыше представлено условие задачи и ПРАВИЛЬНОЕ РЕШЕНИЕ. Ниже представлено решение ученика, которое нужно оценить. \n\nКРИТИЧЕСКИ ВАЖНО: В ПЕРВУЮ ОЧЕРЕДЬ СРАВНИ ОТВЕТЫ ученика с правильными ответами! Если ответ ученика неверный, это ОБЯЗАТЕЛЬНО должно быть учтено в оценке, даже если все преобразования выполнены верно!\n\nПроверь, что все шаги решения выполнены правильно. Не забудь отметить все расхождения между ответами ученика и правильными ответами. Проанализируй решение в соответствии с критериями и примерами выше:\n\n"})
         else:
             # If no correct solution, but we had examples, add a separator
-            if include_examples and (task_type == "task_13" or task_type == "task_14") and prompt_variant == "image_examples":
+            if include_examples and task_type in ["task_13", "task_14"] and prompt_variant == "image_examples":
                 content.append({"type": "text", "text": "\n\n## Решение ученика для оценки:\n\nТеперь, когда ты изучил примеры, переходим к решению ученика, которое нужно оценить. Проанализируй его в соответствии с критериями и примерами выше:\n\n"})
 
         # Add student solution image
