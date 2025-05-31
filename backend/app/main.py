@@ -11,7 +11,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.core.config import settings
-from app.routers import solutions, models, web
+from app.routers import solutions, models, web, metrics
+from app.database.config import create_tables
 
 # Configure logging
 logging.basicConfig(
@@ -40,9 +41,13 @@ if settings.BACKEND_CORS_ORIGINS:
 static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
+# Initialize database tables
+create_tables()
+
 # Include routers
 app.include_router(solutions.router, prefix=f"{settings.API_V1_STR}/solutions", tags=["solutions"])
 app.include_router(models.router, prefix=f"{settings.API_V1_STR}/models", tags=["models"])
+app.include_router(metrics.router, prefix=f"{settings.API_V1_STR}/metrics", tags=["metrics"])
 app.include_router(web.router, tags=["web"])
 
 # Root endpoint is now handled by the web router module
