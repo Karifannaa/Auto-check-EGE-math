@@ -49,6 +49,7 @@ class Settings(BaseSettings):
         "gpt-4.1-nano": "openai/gpt-4.1-nano",
         "gemini-2.5-flash-preview": "google/gemini-2.5-flash-preview",
         "gemini-2.0-flash": "google/gemini-2.0-flash",
+        "gemini-2.0-flash-lite": "google/gemini-2.0-flash-lite-001",
         "gemini-2.0-flash-exp-free": "google/gemini-2.0-flash-exp:free",
         "gemini-1.5-flash": "google/gemini-1.5-flash",
         "gemma-3-27b": "google/gemma-3-27b-it",

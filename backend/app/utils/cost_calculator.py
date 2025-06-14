@@ -32,6 +32,7 @@ MODEL_PRICING = {
     "openai/gpt-4.1-nano": {"input": 0.10, "output": 0.40, "image": 0.0},
     "google/gemini-2.5-flash-preview": {"input": 0.15, "output": 0.60, "image": 0.619},
     "google/gemini-2.0-flash": {"input": 0.125, "output": 0.375, "image": 0.50},  # Estimated
+    "google/gemini-2.0-flash-lite-001": {"input": 0.075, "output": 0.30, "image": 0.0},  # Based on OpenRouter pricing
     "google/gemini-1.5-flash": {"input": 0.10, "output": 0.30, "image": 0.40},  # Estimated
     "meta-llama/llama-4-maverick": {"input": 0.17, "output": 0.60, "image": 0.6684},
     "meta-llama/llama-4-maverick:free": {"input": 0.0, "output": 0.0, "image": 0.0},
@@ -162,6 +163,9 @@ def calculate_actual_cost(model_id: str, prompt_tokens: int, completion_tokens: 
         model_name = settings.REASONING_MODELS[model_id]
     elif model_id in settings.NON_REASONING_MODELS:
         model_name = settings.NON_REASONING_MODELS[model_id]
+    elif model_id in settings.AVAILABLE_MODELS.values():
+        # Model ID is already a full name
+        model_name = model_id
     else:
         raise ValueError(f"Unknown model ID: {model_id}")
 
