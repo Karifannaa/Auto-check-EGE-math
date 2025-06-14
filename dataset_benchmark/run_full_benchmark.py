@@ -16,8 +16,8 @@ async def run_full_benchmark(models=None, max_examples=None):
             "qwen/qwen2.5-vl-32b-instruct:free"
         ]
 
-    # Create benchmark instance
-    benchmark = ModelBenchmark()
+    # Create benchmark instance with updated dataset
+    benchmark = ModelBenchmark(dataset_dir="dataset_benchmark_hf_updated")
 
     try:
         # Run benchmark for all tasks

@@ -817,36 +817,172 @@ score_patterns = [
    - Анализ критериев оценивания
    - Демонстрация возможностей ИИ в образовании
 
-### Команды для быстрого старта
+## 🚀 Quick Start Guide for Model Evaluation
 
-#### Анализ датасета
+### Prerequisites
+
+1. **Install Dependencies**
 ```bash
-# Общая статистика
-python analyze_dataset.py
-
-# Проверка целостности
-python dataset_benchmark/verify_dataset.py
-
-# Генерация отчета
-python dataset_benchmark/debug_paths.py
+pip install datasets pandas numpy pillow fastapi uvicorn python-dotenv httpx python-multipart pydantic pytest pytest-asyncio sqlalchemy alembic pydantic-settings
 ```
 
-#### Запуск бенчмарков
+2. **Get OpenRouter API Key**
+   - Sign up at [OpenRouter](https://openrouter.ai/)
+   - Get your API key from the dashboard
+   - You'll need this for running evaluations
+
+### Step-by-Step Evaluation Process
+
+#### Step 1: Verify System Setup
 ```bash
-# Быстрый тест (5 минут)
-python run_task13_benchmark.py --models "moonshotai/kimi-vl-a3b-thinking:free" --max-examples 3
+# Test that everything is working
+python test_evaluation_simple.py
+```
+This should show "✓ All tests passed! The system is ready for evaluation."
 
-# Средний тест (30 минут)
-python run_full_benchmark.py --models "qwen/qwen2.5-vl-32b-instruct:free" --max-examples 5
+#### Step 2: Run a Quick Test (Recommended First)
+```bash
+# Test with 1 example to verify API connection
+python run_test_evaluation.py
+```
+- Enter your OpenRouter API key when prompted
+- This tests 1 example from task 13
+- Takes ~30 seconds, costs ~$0.01
 
-# Полный тест (несколько часов)
-python run_full_benchmark.py --models "google/gemini-2.0-flash-exp" "gpt-4o"
+#### Step 3: Run Full Evaluation for All Tasks
+```bash
+# Evaluate google/gemini-2.0-flash-exp:free on ALL 122 examples
+python run_full_evaluation.py
+```
+- Enter your OpenRouter API key when prompted
+- Evaluates ALL 7 task types (13-19) with 122 total examples
+- Tests both "with_answer" and "without_answer" approaches
+- Takes 1-3 hours, costs $5-20
+
+### Alternative: Manual Evaluation Commands
+
+#### Quick Dataset Analysis
+```bash
+# Check dataset statistics
+python analyze_dataset.py dataset_benchmark_hf_updated
+
+# Verify system components
+python test_evaluation_simple.py
 ```
 
-#### Анализ результатов
+#### Single Task Evaluation
 ```bash
-# Просмотр последних результатов
+cd dataset_benchmark
+
+# Evaluate only task 13 (21 examples)
+python benchmark_models.py --task 13 --models "google/gemini-2.0-flash-exp:free" --with-answer --without-answer
+
+# Evaluate with limited examples for testing
+python benchmark_models.py --task 13 --models "google/gemini-2.0-flash-exp:free" --with-answer --max-examples 3
+```
+
+#### Full Multi-Task Evaluation
+```bash
+cd dataset_benchmark
+
+# Evaluate all tasks with one model
+python run_full_benchmark.py --models "google/gemini-2.0-flash-exp:free"
+
+# Evaluate with multiple models
+python run_full_benchmark.py --models "google/gemini-2.0-flash-exp:free" "moonshotai/kimi-vl-a3b-thinking:free"
+```
+
+#### Results Analysis
+```bash
+# View recent results
 ls -la dataset_benchmark/benchmark_results/
+
+# Analyze existing results file
+cd dataset_benchmark
+python benchmark_models.py --analyze-only --results-file "path/to/results.json" --latex
+```
+
+### 📊 Understanding the Results
+
+#### Dataset Overview
+- **Total Examples**: 122 student solutions
+- **Task Types**: 7 types (Tasks 13-19)
+  - Task 13: Trigonometric equations (21 examples)
+  - Task 14: Stereometric problems (18 examples)
+  - Task 15: Logarithmic inequalities (19 examples)
+  - Task 16: Planimetric problems (17 examples)
+  - Task 17: Financial mathematics (15 examples)
+  - Task 18: Problems with parameters (16 examples)
+  - Task 19: Number theory problems (16 examples)
+- **Score Range**: 0-4 points per solution
+- **Evaluation Approaches**:
+  - `with_answer`: Student solution + correct answer shown
+  - `without_answer`: Only student solution shown
+
+#### Key Metrics Explained
+- **Accuracy**: Percentage of exact score matches
+- **Quality Score**: Normalized measure (0-100%) of prediction closeness
+- **Macro Precision/Recall/F1**: Multi-class classification metrics
+- **Score Distance**: Average absolute difference between predicted and expected scores
+- **Confusion Matrix**: Shows prediction patterns across score values
+
+#### Cost Estimation
+- **Test run (1 example)**: ~$0.01
+- **Single task (13-21 examples)**: ~$0.50-2.00
+- **Full evaluation (122 examples, both approaches)**: ~$5-20
+- Costs vary by model; free models cost less but may have rate limits
+
+### 🔧 Troubleshooting
+
+#### Common Issues
+1. **"No module named 'datasets'"**: Run `pip install datasets pandas numpy pillow`
+2. **"OpenRouter API key not configured"**: Set your API key when prompted
+3. **Rate limit errors**: The system automatically retries with exponential backoff
+4. **Out of memory**: Reduce `max_examples` or use a machine with more RAM
+
+#### Getting Help
+- Check the logs in `dataset_benchmark/benchmark_logs/`
+- Review error messages carefully
+- Ensure your OpenRouter API key has sufficient credits
+- For dataset issues, verify files exist in `dataset_benchmark_hf_updated/`
+
+### 📈 Advanced Usage
+
+#### Custom Model Evaluation
+```bash
+# Evaluate any OpenRouter model
+cd dataset_benchmark
+python benchmark_models.py --task 13 --models "anthropic/claude-3.5-sonnet" --with-answer
+
+# Multiple models comparison
+python benchmark_models.py --task 13 --models "google/gemini-2.0-flash-exp:free" "openai/gpt-4o" --with-answer --without-answer
+```
+
+#### Batch Processing
+```bash
+# Evaluate all tasks for multiple models
+for model in "google/gemini-2.0-flash-exp:free" "moonshotai/kimi-vl-a3b-thinking:free"; do
+    python run_full_benchmark.py --models "$model"
+done
+```
+
+#### Results Export
+```bash
+# Generate LaTeX tables for papers
+cd dataset_benchmark
+python benchmark_models.py --analyze-only --results-file "results.json" --latex --metrics-latex --explanation-latex
+```
+
+### 🎯 Recommended Evaluation Workflow
+
+1. **Start Small**: Run `python run_test_evaluation.py` first
+2. **Single Task**: Test one task type with `--max-examples 5`
+3. **Full Task**: Evaluate complete task without limits
+4. **All Tasks**: Run full evaluation with `python run_full_evaluation.py`
+5. **Analysis**: Review results and generate reports
+6. **Compare**: Evaluate multiple models for comparison
+
+This ensures you catch any issues early and don't waste API credits on failed runs.
 
 # Анализ конкретного результата
 python analyze_existing_results.py --file benchmark_results/benchmark_task13_*.json
