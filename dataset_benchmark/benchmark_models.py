@@ -127,7 +127,7 @@ class ModelBenchmark:
 
     def __init__(
         self,
-        dataset_dir: str = "dataset_benchmark_hf",
+        dataset_dir: str = "dataset_benchmark_hf_updated",
         results_dir: str = "benchmark_results",
         api_key: Optional[str] = None,
         max_retries: int = 10,
@@ -1106,7 +1106,7 @@ async def main():
     parser.add_argument("--max-examples", type=int, help="Maximum number of examples to process")
     parser.add_argument("--prompt-variant", type=str, default="detailed", help="Prompt variant to use")
     parser.add_argument("--include-examples", action="store_true", help="Include examples in prompts")
-    parser.add_argument("--dataset-dir", type=str, default="dataset_benchmark_hf", help="Dataset directory")
+    parser.add_argument("--dataset-dir", type=str, default="dataset_benchmark_hf_updated", help="Dataset directory")
 
     # Rate limit handling parameters
     parser.add_argument("--max-retries", type=int, default=10, help="Maximum number of retries for rate-limited requests")
