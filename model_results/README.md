@@ -33,6 +33,14 @@ Each model has its own subdirectory containing:
 
 ## Available Models
 
+### google/gemini-2.0-flash-001
+- **Status**: ✅ Complete
+- **Evaluation Date**: 2025-06-14
+- **Best Accuracy**: 47.54% (With Answer mode)
+- **Best Quality Score**: 75.82%
+- **Total Cost**: $0.492 for 366 evaluations
+- **Key Strength**: Superior accuracy and quality
+
 ### google/gemini-2.0-flash-lite-001
 - **Status**: ✅ Complete
 - **Evaluation Date**: 2025-06-14
@@ -44,10 +52,20 @@ Each model has its own subdirectory containing:
 ## Comparative Analysis
 
 ### Performance Ranking (by Quality Score)
-1. **google/gemini-2.0-flash-lite-001**: 70.22% (With True Solution)
+1. **google/gemini-2.0-flash-001**: 75.82% (With True Solution)
+2. **google/gemini-2.0-flash-lite-001**: 70.22% (With True Solution)
+
+### Accuracy Ranking (by exact score matches)
+1. **google/gemini-2.0-flash-001**: 47.54% (With Answer)
+2. **google/gemini-2.0-flash-lite-001**: 38.52% (With True Solution)
 
 ### Cost Efficiency Ranking (by cost per evaluation)
 1. **google/gemini-2.0-flash-lite-001**: $0.0003 per evaluation
+2. **google/gemini-2.0-flash-001**: $0.0017 per evaluation
+
+### Performance vs Cost Analysis
+- **google/gemini-2.0-flash-001**: Premium option - 5.6% better quality for 5.7x cost
+- **google/gemini-2.0-flash-lite-001**: Budget option - Excellent value for cost-sensitive applications
 
 ## Usage Guidelines
 

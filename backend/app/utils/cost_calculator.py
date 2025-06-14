@@ -32,6 +32,7 @@ MODEL_PRICING = {
     "openai/gpt-4.1-nano": {"input": 0.10, "output": 0.40, "image": 0.0},
     "google/gemini-2.5-flash-preview": {"input": 0.15, "output": 0.60, "image": 0.619},
     "google/gemini-2.0-flash": {"input": 0.125, "output": 0.375, "image": 0.50},  # Estimated
+    "google/gemini-2.0-flash-001": {"input": 0.125, "output": 0.375, "image": 0.50},  # Based on OpenRouter pricing
     "google/gemini-2.0-flash-lite-001": {"input": 0.075, "output": 0.30, "image": 0.0},  # Based on OpenRouter pricing
     "google/gemini-1.5-flash": {"input": 0.10, "output": 0.30, "image": 0.40},  # Estimated
     "meta-llama/llama-4-maverick": {"input": 0.17, "output": 0.60, "image": 0.6684},
