@@ -70,7 +70,8 @@ class Settings(BaseSettings):
         "mistral-small-3.1-24b": "mistralai/mistral-small-3.1-24b-instruct",
         "mistral-small-3.1-24b-free": "mistralai/mistral-small-3.1-24b-instruct:free",
         "claude-3.7-sonnet": "anthropic/claude-3.7-sonnet",
-        "phi-4-multimodal": "microsoft/phi-4-multimodal-instruct"
+        "phi-4-multimodal": "microsoft/phi-4-multimodal-instruct",
+        "arcee-spotlight": "arcee-ai/spotlight"
     }
 
     # Combined models for API use
