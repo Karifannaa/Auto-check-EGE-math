@@ -146,18 +146,39 @@ def calculate_metrics(results):
     """Calculate metrics for a set of results."""
     if not results:
         return {}
-    
+
     # Use 'score' instead of 'predicted_score'
     total_score = sum(r.get("score", 0) for r in results)
     total_expected = sum(r.get("expected_score", 0) for r in results)
     correct_predictions = sum(1 for r in results if r.get("score") == r.get("expected_score"))
-    
-    # Calculate quality scores (score / expected_score)
+
+    # Calculate quality scores using the CORRECT method: 1 - normalized_distance
+    # First, determine max possible score for each task type
+    max_scores = {
+        'task_13': 2,
+        'task_14': 3,
+        'task_15': 2,
+        'task_16': 3,
+        'task_17': 3,
+        'task_18': 4,
+        'task_19': 4
+    }
+
     quality_scores = []
     for r in results:
-        if r.get("expected_score", 0) > 0:
-            quality_scores.append(r.get("score", 0) / r.get("expected_score", 1))
-    
+        score = r.get("score", 0)
+        expected_score = r.get("expected_score", 0)
+        task_type = r.get("task_type", "")
+
+        # Get max score for this task type
+        max_score = max_scores.get(task_type, 4)  # Default to 4 if task_type not found
+
+        # Calculate normalized distance
+        if max_score > 0:
+            normalized_distance = abs(score - expected_score) / max_score
+            quality_score = 1.0 - normalized_distance
+            quality_scores.append(quality_score)
+
     score_distances = [abs(r.get("score", 0) - r.get("expected_score", 0)) for r in results]
     evaluation_times = [r.get("evaluation_time", 0) for r in results]
     costs = [r.get("cost", 0) for r in results]

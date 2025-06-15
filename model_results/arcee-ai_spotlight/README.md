@@ -15,9 +15,9 @@ Comprehensive evaluation of arcee-ai/spotlight model on Auto-check-EGE-math data
 
 | Evaluation Mode | Accuracy | Quality Score | Avg Score Distance | Evaluations | Avg Time |
 |----------------|----------|---------------|-------------------|-------------|----------|
-| **Without Answer** | **27.87%** | **116.31%** | **1.04** | **122** | **8.80s** |
-| **With Answer** | **26.23%** | **124.11%** | **1.09** | **122** | **6.99s** |
-| **With True Solution** | **25.41%** | **123.23%** | **1.16** | **122** | **6.98s** |
+| **Without Answer** | **27.87%** | **64.48%** | **1.04** | **122** | **8.80s** |
+| **With Answer** | **26.23%** | **63.18%** | **1.09** | **122** | **6.99s** |
+| **With True Solution** | **25.41%** | **59.22%** | **1.16** | **122** | **6.98s** |
 
 ### Task-by-Task Performance (Without Answer Mode - Best Performance)
 
@@ -35,18 +35,18 @@ Comprehensive evaluation of arcee-ai/spotlight model on Auto-check-EGE-math data
 
 ### Strengths
 - **Consistent performance**: Similar accuracy across all three evaluation modes (25-28%)
-- **Excellent quality scoring**: Quality scores 116-124% indicate strong partial understanding
+- **Good quality scoring**: Quality scores 59-64% indicate reasonable partial understanding
 - **Fast evaluation**: Average 7.6 seconds per evaluation
 - **Stable API integration**: All 366 API calls successful
 - **Complete task coverage**: Evaluated across all 7 task types (13-19) with all three modes
-- **Strong partial credit**: Quality scores >100% show exceptional partial understanding
+- **Decent partial credit**: Quality scores around 60% show good partial understanding
 
 ### Performance Characteristics
-- **Best mode**: "Without Answer" shows highest accuracy (27.87%)
+- **Best mode**: "Without Answer" shows highest accuracy (27.87%) and quality score (64.48%)
 - **Most consistent**: All three modes show similar performance (25-28% accuracy)
-- **True solution benefit**: With true solution mode provides additional context but similar accuracy
+- **True solution impact**: With true solution mode shows slightly lower quality score (59.22%)
 - **Score distance**: Average 1.0-1.2 points from correct score across all modes
-- **Quality vs accuracy**: Exceptional quality scores (116-124%) indicate strong partial understanding
+- **Quality vs accuracy**: Quality scores (59-64%) indicate good partial understanding
 
 ### Model Behavior Analysis
 The arcee-ai/spotlight model demonstrates:
@@ -76,8 +76,8 @@ The arcee-ai/spotlight model demonstrates:
 - `benchmark_all_tasks_spotlight_20250615_121720_analysis.json` - Analysis for both modes
 - `benchmark_all_tasks_spotlight_20250615_140030.json` - With True Solution mode results
 - `benchmark_all_tasks_spotlight_20250615_140030_analysis.json` - Analysis for true solution mode
-- `benchmark_all_tasks_spotlight_combined_20250615_151715.json` - Combined all modes results
-- `benchmark_all_tasks_spotlight_combined_20250615_151715_analysis.json` - Complete analysis
+- `benchmark_all_tasks_spotlight_combined_20250615_152639.json` - Combined all modes results (corrected)
+- `benchmark_all_tasks_spotlight_combined_20250615_152639_analysis.json` - Complete analysis (corrected)
 
 ## Technical Details
 
@@ -152,9 +152,9 @@ The arcee-ai/spotlight model demonstrates:
 
 The arcee-ai/spotlight model offers:
 - **Moderate accuracy** (27.87% best mode across all three evaluation approaches)
-- **Exceptional quality scoring** (116-124% quality scores indicating excellent partial understanding)
+- **Good quality scoring** (59-64% quality scores indicating reasonable partial understanding)
 - **Fast evaluation** (7.6s average across all modes)
 - **Cost-effective solution** (free through OpenRouter)
 - **Complete evaluation coverage** (all three modes: with/without answer, with true solution)
 
-This model serves as an excellent budget option for applications where moderate accuracy is sufficient and cost is a primary concern. While it doesn't match the performance of premium models like Gemini, it provides reasonable results for educational, research, and development purposes. The consistently high quality scores (>100%) across all evaluation modes suggest the model has exceptional partial understanding of mathematical problems, often providing solutions that earn significant partial credit even when not achieving perfect scores. This makes it particularly valuable for scenarios where partial credit recognition and cost-effectiveness are important considerations.
+This model serves as an excellent budget option for applications where moderate accuracy is sufficient and cost is a primary concern. While it doesn't match the performance of premium models like Gemini, it provides reasonable results for educational, research, and development purposes. The quality scores of 59-64% across all evaluation modes suggest the model has good partial understanding of mathematical problems, often providing solutions that earn partial credit even when not achieving perfect scores. This makes it particularly valuable for scenarios where partial credit recognition and cost-effectiveness are important considerations.
