@@ -1,0 +1,95 @@
+{
+  "total_examples": 122,
+  "total_evaluations": 122,
+  "models": {
+    "google/gemini-2.5-flash-preview": {
+      "with_true_solution": {
+        "accuracy": 45.90163934426229,
+        "quality_score": 71.34986225895318,
+        "avg_score_distance": 0.7933884297520661,
+        "macro_precision": 46.88888888888889,
+        "macro_recall": 38.603896103896105,
+        "macro_f1": 40.1425120772947,
+        "per_score_metrics": {
+          "0": {
+            "precision": 38.88888888888889,
+            "recall": 25.0,
+            "f1": 30.434782608695656
+          },
+          "1": {
+            "precision": 40.0,
+            "recall": 50.0,
+            "f1": 44.44444444444445
+          },
+          "2": {
+            "precision": 55.55555555555556,
+            "recall": 71.42857142857143,
+            "f1": 62.500000000000014
+          },
+          "3": {
+            "precision": 25.0,
+            "recall": 9.090909090909092,
+            "f1": 13.333333333333334
+          },
+          "4": {
+            "precision": 75.0,
+            "recall": 37.5,
+            "f1": 50.0
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 7,
+            "1": 12,
+            "2": 9,
+            "3": 0,
+            "4": 0
+          },
+          "1": {
+            "0": 8,
+            "1": 20,
+            "2": 8,
+            "3": 3,
+            "4": 0
+          },
+          "2": {
+            "0": 1,
+            "1": 9,
+            "2": 25,
+            "3": 0,
+            "4": 0
+          },
+          "3": {
+            "0": 1,
+            "1": 7,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "4": {
+            "0": 1,
+            "1": 2,
+            "2": 2,
+            "3": 0,
+            "4": 3
+          }
+        },
+        "evaluations": 122,
+        "avg_evaluation_time": 11.66536662813093,
+        "avg_prompt_tokens": 2590.967213114754,
+        "avg_completion_tokens": 1570.7540983606557,
+        "avg_total_tokens": 4161.7213114754095,
+        "total_cost": 0.34437989999999996
+      }
+    }
+  },
+  "summary": {
+    "avg_evaluation_time": 11.66536662813093,
+    "avg_prompt_tokens": 2590.967213114754,
+    "avg_completion_tokens": 1570.7540983606557,
+    "avg_total_tokens": 4161.7213114754095,
+    "total_cost": 0.34437989999999996,
+    "avg_quality_score": 0.7134986225895318
+  },
+  "task_type": "task_13"
+}
