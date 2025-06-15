@@ -1,0 +1,95 @@
+{
+  "total_examples": 122,
+  "total_evaluations": 122,
+  "models": {
+    "arcee-ai/spotlight": {
+      "with_true_solution": {
+        "accuracy": 25.40983606557377,
+        "quality_score": 59.221311475409834,
+        "avg_score_distance": 1.1557377049180328,
+        "macro_precision": 24.582875457875456,
+        "macro_recall": 27.233766233766232,
+        "macro_f1": 24.089561790072285,
+        "per_score_metrics": {
+          "0": {
+            "precision": 15.384615384615385,
+            "recall": 7.142857142857142,
+            "f1": 9.75609756097561
+          },
+          "1": {
+            "precision": 30.0,
+            "recall": 30.0,
+            "f1": 30.0
+          },
+          "2": {
+            "precision": 33.33333333333333,
+            "recall": 28.57142857142857,
+            "f1": 30.769230769230766
+          },
+          "3": {
+            "precision": 15.625,
+            "recall": 45.45454545454545,
+            "f1": 23.25581395348837
+          },
+          "4": {
+            "precision": 28.57142857142857,
+            "recall": 25.0,
+            "f1": 26.666666666666668
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 2,
+            "1": 13,
+            "2": 5,
+            "3": 8,
+            "4": 0
+          },
+          "1": {
+            "0": 5,
+            "1": 12,
+            "2": 9,
+            "3": 11,
+            "4": 3
+          },
+          "2": {
+            "0": 5,
+            "1": 14,
+            "2": 10,
+            "3": 6,
+            "4": 0
+          },
+          "3": {
+            "0": 1,
+            "1": 1,
+            "2": 2,
+            "3": 5,
+            "4": 2
+          },
+          "4": {
+            "0": 0,
+            "1": 0,
+            "2": 4,
+            "3": 2,
+            "4": 2
+          }
+        },
+        "evaluations": 122,
+        "avg_evaluation_time": 6.980957639021952,
+        "avg_prompt_tokens": 4233.852459016393,
+        "avg_completion_tokens": 1005.6229508196722,
+        "avg_total_tokens": 5239.475409836065,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "summary": {
+    "avg_evaluation_time": 6.980957639021952,
+    "avg_prompt_tokens": 4233.852459016393,
+    "avg_completion_tokens": 1005.6229508196722,
+    "avg_total_tokens": 5239.475409836065,
+    "total_cost": 0.0,
+    "avg_quality_score": 0.5922131147540983
+  },
+  "task_type": "task_13"
+}

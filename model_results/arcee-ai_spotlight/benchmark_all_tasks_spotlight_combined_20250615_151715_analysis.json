@@ -1,0 +1,112 @@
+{
+  "evaluation_date": "2025-06-15",
+  "model": "arcee-ai/spotlight",
+  "total_examples": 122,
+  "total_evaluations": 366,
+  "evaluation_modes": [
+    "with_answer",
+    "without_answer",
+    "with_true_solution"
+  ],
+  "summary": {
+    "total_cost": 0.0,
+    "avg_evaluation_time": 7.591698348196478,
+    "avg_quality_score": 0
+  },
+  "models": {
+    "arcee-ai/spotlight": {
+      "with_answer": {
+        "evaluations": 122,
+        "accuracy": 26.229508196721312,
+        "quality_score": 124.11347517730493,
+        "avg_score_distance": 1.0901639344262295,
+        "avg_evaluation_time": 6.994416526106537,
+        "total_cost": 0.0,
+        "total_time": 853.3188161849976
+      },
+      "without_answer": {
+        "evaluations": 122,
+        "accuracy": 27.86885245901639,
+        "quality_score": 116.31205673758866,
+        "avg_score_distance": 1.040983606557377,
+        "avg_evaluation_time": 8.799720879460944,
+        "total_cost": 0.0,
+        "total_time": 1073.5659472942352
+      },
+      "with_true_solution": {
+        "evaluations": 122,
+        "accuracy": 25.40983606557377,
+        "quality_score": 123.22695035460993,
+        "avg_score_distance": 1.1557377049180328,
+        "avg_evaluation_time": 6.980957639021952,
+        "total_cost": 0.0,
+        "total_time": 851.6768319606781
+      }
+    }
+  },
+  "task_breakdown": {
+    "13": {
+      "total_evaluations": 63,
+      "examples": 21,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    },
+    "14": {
+      "total_evaluations": 54,
+      "examples": 18,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    },
+    "15": {
+      "total_evaluations": 57,
+      "examples": 19,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    },
+    "16": {
+      "total_evaluations": 51,
+      "examples": 17,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    },
+    "17": {
+      "total_evaluations": 45,
+      "examples": 15,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    },
+    "18": {
+      "total_evaluations": 48,
+      "examples": 16,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    },
+    "19": {
+      "total_evaluations": 48,
+      "examples": 16,
+      "modes": [
+        "with_answer",
+        "with_true_solution",
+        "without_answer"
+      ]
+    }
+  }
+}
