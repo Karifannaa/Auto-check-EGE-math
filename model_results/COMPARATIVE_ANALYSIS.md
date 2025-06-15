@@ -1,15 +1,17 @@
-# Comprehensive Model Comparison: Gemini 2.0 Flash vs Flash Lite
+# Comprehensive Model Comparison: Gemini 2.0 & 2.5 Flash Models
 
 ## Executive Summary
 
-This document provides a detailed comparison between two Google Gemini 2.0 models evaluated on the Auto-check-EGE-math dataset. Both models were tested across all three evaluation modes with 122 mathematical problems spanning tasks 13-19.
+This document provides a detailed comparison between four Google Gemini models evaluated on the Auto-check-EGE-math dataset. All models were tested across three evaluation modes with 122 mathematical problems spanning tasks 13-19.
 
 ## Model Overview
 
 | Model | Version | Total Cost | Best Accuracy | Best Quality Score | Cost per Evaluation |
 |-------|---------|------------|---------------|-------------------|-------------------|
-| **google/gemini-2.0-flash-001** | Full | $0.492 | **47.54%** | **75.82%** | $0.0017 |
-| **google/gemini-2.0-flash-lite-001** | Lite | $0.107 | 38.52% | 70.22% | **$0.0003** |
+| **google/gemini-2.0-flash-001** | 2.0 Full | $0.492 | **47.54%** | **75.82%** | $0.0017 |
+| **google/gemini-2.5-flash-preview** | 2.5 Standard | $1.409 | 44.26% | 71.04% | $0.0038 |
+| **google/gemini-2.5-flash-preview:thinking** | 2.5 Thinking | $2.007 | 43.44% | 66.44% | $0.0055 |
+| **google/gemini-2.0-flash-lite-001** | 2.0 Lite | $0.107 | 38.52% | 70.22% | **$0.0003** |
 
 ## Performance Comparison
 
