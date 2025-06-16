@@ -1,112 +1,256 @@
 {
-  "evaluation_date": "2025-06-15",
-  "model": "arcee-ai/spotlight",
   "total_examples": 122,
   "total_evaluations": 366,
-  "evaluation_modes": [
-    "with_answer",
-    "without_answer",
-    "with_true_solution"
-  ],
-  "summary": {
-    "total_cost": 0.0,
-    "avg_evaluation_time": 7.591698348196478,
-    "avg_quality_score": 0
-  },
   "models": {
     "arcee-ai/spotlight": {
-      "with_answer": {
-        "evaluations": 122,
-        "accuracy": 26.229508196721312,
-        "quality_score": 124.11347517730493,
-        "avg_score_distance": 1.0901639344262295,
-        "avg_evaluation_time": 6.994416526106537,
-        "total_cost": 0.0,
-        "total_time": 853.3188161849976
-      },
       "without_answer": {
-        "evaluations": 122,
         "accuracy": 27.86885245901639,
-        "quality_score": 116.31205673758866,
+        "close_accuracy": 74.59016393442623,
+        "quality_score": 64.48087431693989,
         "avg_score_distance": 1.040983606557377,
+        "macro_precision": 27.197288452547916,
+        "macro_recall": 29.162337662337666,
+        "macro_f1": 26.834763503710157,
+        "per_score_metrics": {
+          "0": {
+            "precision": 33.33333333333333,
+            "recall": 17.857142857142858,
+            "f1": 23.25581395348837
+          },
+          "1": {
+            "precision": 33.33333333333333,
+            "recall": 37.5,
+            "f1": 35.294117647058826
+          },
+          "2": {
+            "precision": 22.58064516129032,
+            "recall": 20.0,
+            "f1": 21.212121212121215
+          },
+          "3": {
+            "precision": 21.73913043478261,
+            "recall": 45.45454545454545,
+            "f1": 29.411764705882355
+          },
+          "4": {
+            "precision": 25.0,
+            "recall": 25.0,
+            "f1": 25.0
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 5,
+            "1": 12,
+            "2": 8,
+            "3": 3,
+            "4": 0
+          },
+          "1": {
+            "0": 5,
+            "1": 15,
+            "2": 11,
+            "3": 6,
+            "4": 3
+          },
+          "2": {
+            "0": 3,
+            "1": 17,
+            "2": 7,
+            "3": 5,
+            "4": 3
+          },
+          "3": {
+            "0": 2,
+            "1": 1,
+            "2": 3,
+            "3": 5,
+            "4": 0
+          },
+          "4": {
+            "0": 0,
+            "1": 0,
+            "2": 2,
+            "3": 4,
+            "4": 2
+          }
+        },
+        "evaluations": 122,
         "avg_evaluation_time": 8.799720879460944,
-        "total_cost": 0.0,
-        "total_time": 1073.5659472942352
+        "avg_prompt_tokens": 2558.7950819672133,
+        "avg_completion_tokens": 1358.6475409836066,
+        "avg_total_tokens": 3917.44262295082,
+        "total_cost": 0.0
       },
       "with_true_solution": {
-        "evaluations": 122,
         "accuracy": 25.40983606557377,
-        "quality_score": 123.22695035460993,
+        "close_accuracy": 68.85245901639344,
+        "quality_score": 59.221311475409834,
         "avg_score_distance": 1.1557377049180328,
+        "macro_precision": 24.582875457875456,
+        "macro_recall": 27.233766233766232,
+        "macro_f1": 24.089561790072285,
+        "per_score_metrics": {
+          "0": {
+            "precision": 15.384615384615385,
+            "recall": 7.142857142857142,
+            "f1": 9.75609756097561
+          },
+          "1": {
+            "precision": 30.0,
+            "recall": 30.0,
+            "f1": 30.0
+          },
+          "2": {
+            "precision": 33.33333333333333,
+            "recall": 28.57142857142857,
+            "f1": 30.769230769230766
+          },
+          "3": {
+            "precision": 15.625,
+            "recall": 45.45454545454545,
+            "f1": 23.25581395348837
+          },
+          "4": {
+            "precision": 28.57142857142857,
+            "recall": 25.0,
+            "f1": 26.666666666666668
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 2,
+            "1": 13,
+            "2": 5,
+            "3": 8,
+            "4": 0
+          },
+          "1": {
+            "0": 5,
+            "1": 12,
+            "2": 9,
+            "3": 11,
+            "4": 3
+          },
+          "2": {
+            "0": 5,
+            "1": 14,
+            "2": 10,
+            "3": 6,
+            "4": 0
+          },
+          "3": {
+            "0": 1,
+            "1": 1,
+            "2": 2,
+            "3": 5,
+            "4": 2
+          },
+          "4": {
+            "0": 0,
+            "1": 0,
+            "2": 4,
+            "3": 2,
+            "4": 2
+          }
+        },
+        "evaluations": 122,
         "avg_evaluation_time": 6.980957639021952,
-        "total_cost": 0.0,
-        "total_time": 851.6768319606781
+        "avg_prompt_tokens": 4233.852459016393,
+        "avg_completion_tokens": 1005.6229508196722,
+        "avg_total_tokens": 5239.475409836065,
+        "total_cost": 0.0
+      },
+      "with_answer": {
+        "accuracy": 26.229508196721312,
+        "close_accuracy": 71.31147540983606,
+        "quality_score": 63.18306010928963,
+        "avg_score_distance": 1.0901639344262295,
+        "macro_precision": 25.164587918806554,
+        "macro_recall": 27.590909090909086,
+        "macro_f1": 24.041850869437077,
+        "per_score_metrics": {
+          "0": {
+            "precision": 25.0,
+            "recall": 7.142857142857142,
+            "f1": 11.111111111111112
+          },
+          "1": {
+            "precision": 31.914893617021278,
+            "recall": 37.5,
+            "f1": 34.48275862068966
+          },
+          "2": {
+            "precision": 26.666666666666668,
+            "recall": 22.857142857142858,
+            "f1": 24.615384615384613
+          },
+          "3": {
+            "precision": 17.24137931034483,
+            "recall": 45.45454545454545,
+            "f1": 25.000000000000007
+          },
+          "4": {
+            "precision": 25.0,
+            "recall": 25.0,
+            "f1": 25.0
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 2,
+            "1": 12,
+            "2": 10,
+            "3": 4,
+            "4": 0
+          },
+          "1": {
+            "0": 4,
+            "1": 15,
+            "2": 9,
+            "3": 10,
+            "4": 2
+          },
+          "2": {
+            "0": 0,
+            "1": 18,
+            "2": 8,
+            "3": 6,
+            "4": 3
+          },
+          "3": {
+            "0": 2,
+            "1": 2,
+            "2": 1,
+            "3": 5,
+            "4": 1
+          },
+          "4": {
+            "0": 0,
+            "1": 0,
+            "2": 2,
+            "3": 4,
+            "4": 2
+          }
+        },
+        "evaluations": 122,
+        "avg_evaluation_time": 6.994416526106537,
+        "avg_prompt_tokens": 2556.8934426229507,
+        "avg_completion_tokens": 1065.655737704918,
+        "avg_total_tokens": 3622.5491803278687,
+        "total_cost": 0.0
       }
     }
   },
-  "task_breakdown": {
-    "13": {
-      "total_evaluations": 63,
-      "examples": 21,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    },
-    "14": {
-      "total_evaluations": 54,
-      "examples": 18,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    },
-    "15": {
-      "total_evaluations": 57,
-      "examples": 19,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    },
-    "16": {
-      "total_evaluations": 51,
-      "examples": 17,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    },
-    "17": {
-      "total_evaluations": 45,
-      "examples": 15,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    },
-    "18": {
-      "total_evaluations": 48,
-      "examples": 16,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    },
-    "19": {
-      "total_evaluations": 48,
-      "examples": 16,
-      "modes": [
-        "with_answer",
-        "with_true_solution",
-        "without_answer"
-      ]
-    }
-  }
+  "summary": {
+    "avg_evaluation_time": 7.591698348196478,
+    "avg_prompt_tokens": 3116.5136612021856,
+    "avg_completion_tokens": 1143.308743169399,
+    "avg_total_tokens": 4259.8224043715845,
+    "total_cost": 0.0,
+    "avg_quality_score": 0.6229508196721312,
+    "accuracy": 26.50273224043716,
+    "close_accuracy": 71.58469945355192
+  },
+  "filename": "benchmark_all_tasks_spotlight_combined_20250615_151715.json"
 }
