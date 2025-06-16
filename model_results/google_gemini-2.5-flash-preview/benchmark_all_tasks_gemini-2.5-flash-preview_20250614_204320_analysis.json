@@ -5,6 +5,7 @@
     "google/gemini-2.5-flash-preview": {
       "without_answer": {
         "accuracy": 44.26229508196721,
+        "close_accuracy": 80.32786885245902,
         "quality_score": 71.0382513661202,
         "avg_score_distance": 0.8114754098360656,
         "macro_precision": 41.8508801052065,
@@ -83,6 +84,7 @@
       },
       "with_answer": {
         "accuracy": 40.98360655737705,
+        "close_accuracy": 81.14754098360656,
         "quality_score": 70.49180327868852,
         "avg_score_distance": 0.819672131147541,
         "macro_precision": 41.43020594965675,
@@ -167,7 +169,9 @@
     "avg_completion_tokens": 2371.4590163934427,
     "avg_total_tokens": 4851.450819672131,
     "total_cost": 0.6261253,
-    "avg_quality_score": 0.7076502732240438
+    "avg_quality_score": 0.7076502732240438,
+    "accuracy": 42.62295081967213,
+    "close_accuracy": 80.73770491803278
   },
-  "task_type": "task_13"
+  "filename": "benchmark_all_tasks_gemini-2.5-flash-preview_20250614_204320.json"
 }

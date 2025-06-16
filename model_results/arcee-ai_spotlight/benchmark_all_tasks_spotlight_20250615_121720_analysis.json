@@ -5,6 +5,7 @@
     "arcee-ai/spotlight": {
       "without_answer": {
         "accuracy": 27.86885245901639,
+        "close_accuracy": 74.59016393442623,
         "quality_score": 64.48087431693989,
         "avg_score_distance": 1.040983606557377,
         "macro_precision": 27.197288452547916,
@@ -83,6 +84,7 @@
       },
       "with_answer": {
         "accuracy": 26.229508196721312,
+        "close_accuracy": 71.31147540983606,
         "quality_score": 63.18306010928963,
         "avg_score_distance": 1.0901639344262295,
         "macro_precision": 25.164587918806554,
@@ -167,7 +169,9 @@
     "avg_completion_tokens": 1212.1516393442623,
     "avg_total_tokens": 3769.995901639344,
     "total_cost": 0.0,
-    "avg_quality_score": 0.6383196721311475
+    "avg_quality_score": 0.6383196721311475,
+    "accuracy": 27.049180327868854,
+    "close_accuracy": 72.95081967213115
   },
-  "task_type": "task_13"
+  "filename": "benchmark_all_tasks_spotlight_20250615_121720.json"
 }

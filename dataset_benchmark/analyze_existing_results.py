@@ -107,8 +107,8 @@ class ResultsAnalyzer:
         # This gives a score from 0 to 1, where 1 is perfect prediction and 0 is worst possible prediction
         df['quality_score'] = 1 - df['normalized_distance']
 
-        # Group by model and answer type
-        grouped = df.groupby(['model_id', 'use_answer'])
+        # Group by model, answer type, and true solution usage
+        grouped = df.groupby(['model_id', 'use_answer', 'use_true_solution'])
 
         analysis = {
             "total_examples": len(df['solution_id'].unique()),
@@ -127,11 +127,17 @@ class ResultsAnalyzer:
         }
 
         # Analyze each model
-        for (model_id, use_answer), group in grouped:
+        for (model_id, use_answer, use_true_solution), group in grouped:
             if model_id not in analysis["models"]:
                 analysis["models"][model_id] = {}
 
-            answer_type = "with_answer" if use_answer else "without_answer"
+            # Determine the answer type based on both flags
+            if use_true_solution:
+                answer_type = "with_true_solution"
+            elif use_answer:
+                answer_type = "with_answer"
+            else:
+                answer_type = "without_answer"
 
             # Basic metrics
             accuracy = group['correct'].mean() * 100

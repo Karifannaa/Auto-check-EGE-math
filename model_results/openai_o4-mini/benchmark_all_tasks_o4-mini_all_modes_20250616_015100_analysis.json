@@ -5,6 +5,7 @@
     "openai/o4-mini": {
       "without_answer": {
         "accuracy": 55.73770491803278,
+        "close_accuracy": 82.78688524590164,
         "quality_score": 75.54644808743168,
         "avg_score_distance": 0.6639344262295082,
         "macro_precision": 52.458565244279534,
@@ -83,6 +84,7 @@
       },
       "with_true_solution": {
         "accuracy": 54.09836065573771,
+        "close_accuracy": 82.78688524590164,
         "quality_score": 76.16120218579235,
         "avg_score_distance": 0.6557377049180327,
         "macro_precision": 54.959464072367304,
@@ -161,6 +163,7 @@
       },
       "with_answer": {
         "accuracy": 56.557377049180324,
+        "close_accuracy": 86.88524590163934,
         "quality_score": 78.168044077135,
         "avg_score_distance": 0.5950413223140496,
         "macro_precision": 57.65363318851691,
@@ -245,7 +248,9 @@
     "avg_completion_tokens": 2878.745901639344,
     "avg_total_tokens": 6191.543715846995,
     "total_cost": 6.4740228,
-    "avg_quality_score": 0.7662100456621005
+    "avg_quality_score": 0.7662100456621005,
+    "accuracy": 55.46448087431693,
+    "close_accuracy": 84.15300546448088
   },
-  "task_type": "task_13"
+  "filename": "benchmark_all_tasks_o4-mini_all_modes_20250616_015100.json"
 }

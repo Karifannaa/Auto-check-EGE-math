@@ -5,6 +5,7 @@
     "google/gemini-2.5-flash-preview:thinking": {
       "with_true_solution": {
         "accuracy": 43.44262295081967,
+        "close_accuracy": 72.1311475409836,
         "quality_score": 65.9153005464481,
         "avg_score_distance": 0.9918032786885246,
         "macro_precision": 53.83614315291334,
@@ -89,7 +90,9 @@
     "avg_completion_tokens": 7544.639344262295,
     "avg_total_tokens": 10155.081967213115,
     "total_cost": 0.7832627,
-    "avg_quality_score": 0.659153005464481
+    "avg_quality_score": 0.659153005464481,
+    "accuracy": 43.44262295081967,
+    "close_accuracy": 72.1311475409836
   },
-  "task_type": "task_13"
+  "filename": "benchmark_all_tasks_gemini-2.5-flash-preview_20250614_222041.json"
 }

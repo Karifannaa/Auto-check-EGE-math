@@ -5,6 +5,7 @@
     "qwen/qwen2.5-vl-32b-instruct": {
       "with_true_solution": {
         "accuracy": 43.44262295081967,
+        "close_accuracy": 77.8688524590164,
         "quality_score": 70.49180327868852,
         "avg_score_distance": 0.8114754098360656,
         "macro_precision": 42.97121334409469,
@@ -89,7 +90,9 @@
     "avg_completion_tokens": 1489.0081967213114,
     "avg_total_tokens": 5778.024590163935,
     "total_cost": 0.6344270999999999,
-    "avg_quality_score": 0.7049180327868853
+    "avg_quality_score": 0.7049180327868853,
+    "accuracy": 43.44262295081967,
+    "close_accuracy": 77.8688524590164
   },
-  "task_type": "task_13"
+  "filename": "benchmark_all_tasks_qwen2.5-vl-32b-instruct_20250615_193114.json"
 }
