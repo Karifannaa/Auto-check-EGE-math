@@ -21,8 +21,8 @@
 13 & Trigonometry & 21 & 0-2 points \\
 14 & Stereometry & 18 & \textbf{0-3 points} \\
 15 & Inequalities & 19 & 0-2 points \\
-16 & Planimetry & 17 & \textbf{0-3 points} \\
-17 & Financial Mathematics & 15 & \textbf{0-3 points} \\
+16 & Financial Mathematics & 17 & 0-2 points \\
+17 & Planimetry & 15 & \textbf{0-3 points} \\
 18 & Parametric Problems & 16 & \textbf{0-4 points} \\
 19 & Number Theory & 16 & \textbf{0-4 points} \\
 \midrule
@@ -171,8 +171,8 @@ The Quality Score is a normalized measure that indicates how close the model's p
 \textbf{CORRECTED Calculation:} \\
 1. For each prediction, calculate the absolute difference between predicted and expected score \\
 2. Normalize this difference by dividing by the maximum possible score for the specific task type: \\
-   - Tasks 13, 15: max score = 2 points \\
-   - Tasks 14, 16, 17: max score = 3 points \\
+   - Tasks 13, 15, 16: max score = 2 points \\
+   - Tasks 14, 17: max score = 3 points \\
    - Tasks 18, 19: max score = 4 points \\
 3. Subtract this normalized distance from 1 to get a quality score between 0 and 1 \\
 4. Convert to percentage by multiplying by 100 \\

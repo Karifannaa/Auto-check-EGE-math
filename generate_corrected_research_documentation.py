@@ -17,10 +17,10 @@ class CorrectedResearchDocumentationGenerator:
         # CORRECT score ranges for each task type
         self.correct_max_scores = {
             'task_13': 2,  # Trigonometry
-            'task_14': 3,  # Stereometry  
+            'task_14': 3,  # Stereometry
             'task_15': 2,  # Inequalities
-            'task_16': 3,  # Planimetry
-            'task_17': 3,  # Financial Mathematics
+            'task_16': 2,  # Financial Mathematics (CORRECTED!)
+            'task_17': 3,  # Planimetry (CORRECTED!)
             'task_18': 4,  # Parametric Problems
             'task_19': 4   # Number Theory
         }
@@ -100,8 +100,8 @@ class CorrectedResearchDocumentationGenerator:
 | 13 | Trigonometry | Тригонометрические уравнения | 21 | 0-2 points |
 | 14 | Stereometry | Стереометрическая задача | 18 | 0-3 points |
 | 15 | Inequalities | Логарифмические неравенства | 19 | 0-2 points |
-| 16 | Planimetry | Планиметрическая задача | 17 | 0-3 points |
-| 17 | Financial Mathematics | Финансовая математика | 15 | 0-3 points |
+| 16 | Financial Mathematics | Финансовая математика | 17 | 0-2 points |
+| 17 | Planimetry | Планиметрическая задача | 15 | 0-3 points |
 | 18 | Parametric Problems | Задача с параметром | 16 | 0-4 points |
 | 19 | Number Theory | Задача по теории чисел | 16 | 0-4 points |
 | **Total** | | | **122** | |
@@ -122,7 +122,7 @@ class CorrectedResearchDocumentationGenerator:
 - **Definition**: Normalized measure indicating prediction closeness to expected scores
 - **Formula**: `Quality Score = 100% × (1 - normalized_distance)`
 - **Normalized Distance Calculation**: `|predicted_score - expected_score| / max_score_for_task`
-- **Task-specific Max Scores**: Task 13,15: 2 points; Task 14,16,17: 3 points; Task 18,19: 4 points
+- **Task-specific Max Scores**: Task 13,15,16: 2 points; Task 14,17: 3 points; Task 18,19: 4 points
 - **Range**: 0-100% (higher is better)
 - **Interpretation**: Accounts for partial correctness and task-specific scoring scales
 
