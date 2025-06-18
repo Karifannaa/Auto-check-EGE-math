@@ -1,0 +1,144 @@
+% LaTeX Tables for EGE Mathematics Benchmark Research Paper
+% Generated from comprehensive evaluation results
+
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{rotating}
+
+\begin{document}
+
+% Main Results Table
+\begin{table*}[htbp]
+\centering
+\caption{Comprehensive Performance Results for AI Models on EGE Mathematics Assessment}
+\label{tab:comprehensive_results}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+\textbf{Model} & \textbf{Evaluation Mode} & \textbf{Accuracy (\%)} & \textbf{Quality Score (\%)} & \textbf{Avg Score Distance} & \textbf{Total Cost (\$)} & \textbf{Evaluations} & \textbf{Avg Time (s)} \\
+\midrule
+\multirow{3}{*}{OpenAI o4-mini} 
+& Without Answer & 55.74 & 75.55 & 0.66 & 2.1788 & 122 & 39.62 \\
+& With Answer & \textbf{56.56} & \textbf{78.17} & 0.60 & 2.0174 & 122 & 32.94 \\
+& With True Solution & 54.10 & 76.16 & 0.66 & 2.2779 & 122 & 58.47 \\
+\midrule
+Google Gemini 2.0 Flash 
+& With True Solution & 46.72 & 75.82 & 0.71 & 0.2057 & 122 & 3.13 \\
+\midrule
+Google Gemini 2.5 Flash Preview 
+& With True Solution & 45.90 & 71.35 & 0.79 & 0.3444 & 122 & 11.67 \\
+\midrule
+\multirow{3}{*}{Qwen 2.5 VL 32B} 
+& Without Answer & 31.15 & 62.09 & 1.09 & 0.4550 & 122 & 22.97 \\
+& With Answer & 30.33 & 61.95 & 1.08 & 0.4571 & 122 & 23.27 \\
+& With True Solution & 43.44 & 70.49 & 0.81 & 0.6344 & 122 & 27.55 \\
+\midrule
+Google Gemini 2.5 Flash Preview:thinking 
+& With True Solution & 43.44 & 65.92 & 0.99 & 0.7833 & 122 & 47.59 \\
+\midrule
+Google Gemini 2.0 Flash Lite 
+& With True Solution & 38.52 & 70.22 & 0.84 & \textbf{0.0369} & 122 & \textbf{3.09} \\
+\midrule
+\multirow{3}{*}{Arcee AI Spotlight} 
+& Without Answer & 27.87 & 64.48 & 1.04 & 0.0000 & 122 & 8.80 \\
+& With Answer & 26.23 & 63.18 & 1.09 & 0.0000 & 122 & 6.99 \\
+& With True Solution & 25.41 & 59.22 & 1.16 & 0.0000 & 122 & 6.98 \\
+\bottomrule
+\end{tabular}%
+}
+\note{Best performance values are highlighted in bold. Quality Score represents normalized performance accounting for partial correctness.}
+\end{table*}
+
+% Model Rankings Table
+\begin{table}[htbp]
+\centering
+\caption{Model Performance Rankings by Average Quality Score}
+\label{tab:model_rankings}
+\begin{tabular}{@{}clccc@{}}
+\toprule
+\textbf{Rank} & \textbf{Model} & \textbf{Avg Quality Score (\%)} & \textbf{Total Cost (\$)} & \textbf{Total Evaluations} \\
+\midrule
+1 & OpenAI o4-mini & 76.63 & 6.4741 & 366 \\
+2 & Google Gemini 2.0 Flash & 75.82 & 0.2057 & 122 \\
+3 & Google Gemini 2.5 Flash Preview & 71.35 & 0.3444 & 122 \\
+4 & Google Gemini 2.0 Flash Lite & 70.22 & 0.0369 & 122 \\
+5 & Google Gemini 2.5 Flash Preview:thinking & 65.92 & 0.7833 & 122 \\
+6 & Arcee AI Spotlight & 62.30 & 0.0000 & 366 \\
+7 & Qwen 2.5 VL 32B & 64.84 & 1.5465 & 366 \\
+\bottomrule
+\end{tabular}
+\note{Rankings based on average quality score across all evaluation modes.}
+\end{table}
+
+% Cost-Effectiveness Analysis Table
+\begin{table}[htbp]
+\centering
+\caption{Cost-Effectiveness Analysis of AI Models}
+\label{tab:cost_effectiveness}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Model} & \textbf{Cost per Evaluation (\$)} & \textbf{Quality Score (\%)} & \textbf{Quality/Cost Ratio} \\
+\midrule
+Arcee AI Spotlight & 0.0000 & 62.30 & $\infty$ \\
+Google Gemini 2.0 Flash Lite & 0.0003 & 70.22 & 234,067 \\
+Google Gemini 2.0 Flash & 0.0017 & 75.82 & 44,600 \\
+Google Gemini 2.5 Flash Preview & 0.0028 & 71.35 & 25,482 \\
+Qwen 2.5 VL 32B & 0.0042 & 64.84 & 15,438 \\
+Google Gemini 2.5 Flash Preview:thinking & 0.0064 & 65.92 & 10,300 \\
+OpenAI o4-mini & 0.0177 & 76.63 & 4,330 \\
+\bottomrule
+\end{tabular}
+\note{Quality/Cost ratio calculated as (Quality Score / Cost per Evaluation). Higher values indicate better cost-effectiveness.}
+\end{table}
+
+% Dataset Characteristics Table
+\begin{table}[htbp]
+\centering
+\caption{EGE Mathematics Dataset Characteristics}
+\label{tab:dataset_characteristics}
+\begin{tabular}{@{}clcc@{}}
+\toprule
+\textbf{Task ID} & \textbf{Mathematical Domain} & \textbf{Count} & \textbf{Score Range} \\
+\midrule
+13 & Trigonometry & 21 & 0-2 points \\
+14 & Stereometry & 18 & 0-2 points \\
+15 & Inequalities & 19 & 0-2 points \\
+16 & Planimetry & 17 & 0-2 points \\
+17 & Financial Mathematics & 15 & 0-2 points \\
+18 & Parametric Problems & 16 & 0-2 points \\
+19 & Number Theory & 16 & 0-2 points \\
+\midrule
+\textbf{Total} & & \textbf{122} & \\
+\bottomrule
+\end{tabular}
+\note{Dataset contains 122 examples across 7 mathematical domains from Russian EGE exam tasks 13-19.}
+\end{table}
+
+% Evaluation Modes Comparison Table
+\begin{table}[htbp]
+\centering
+\caption{Performance Comparison Across Evaluation Modes}
+\label{tab:evaluation_modes}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Model} & \textbf{Without Answer} & \textbf{With Answer} & \textbf{With True Solution} \\
+\midrule
+\multicolumn{4}{c}{\textit{Quality Score (\%)}} \\
+\midrule
+OpenAI o4-mini & 75.55 & \textbf{78.17} & 76.16 \\
+Qwen 2.5 VL 32B & 62.09 & 61.95 & \textbf{70.49} \\
+Arcee AI Spotlight & \textbf{64.48} & 63.18 & 59.22 \\
+\midrule
+\multicolumn{4}{c}{\textit{Accuracy (\%)}} \\
+\midrule
+OpenAI o4-mini & 55.74 & \textbf{56.56} & 54.10 \\
+Qwen 2.5 VL 32B & 31.15 & 30.33 & \textbf{43.44} \\
+Arcee AI Spotlight & \textbf{27.87} & 26.23 & 25.41 \\
+\bottomrule
+\end{tabular}
+\note{Best performance for each model highlighted in bold. Only models with all three evaluation modes shown.}
+\end{table}
+
+\end{document}
