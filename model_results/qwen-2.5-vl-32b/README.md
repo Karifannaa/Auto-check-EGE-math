@@ -5,8 +5,8 @@ Comprehensive evaluation of qwen-2.5-vl-32b model on Auto-check-EGE-math dataset
 
 **Evaluation Date**: 2025-06-15  
 **Total Examples**: 122  
-**Total Evaluations**: 244  
-**Total Cost**: $0.9121  
+**Total Evaluations**: 366  
+**Total Cost**: $1.5465
 **Duration**: 1:34:07.269277
 
 ## Performance Summary
@@ -15,14 +15,15 @@ Comprehensive evaluation of qwen-2.5-vl-32b model on Auto-check-EGE-math dataset
 
 | Evaluation Mode | Accuracy | Quality Score | Avg Score Distance | Total Cost | Evaluations |
 |----------------|----------|---------------|-------------------|------------|-------------|
-| **Without_Answer** | **31.15%** | **62.09%** | **1.09** | **$0.4550** | **122** |
-| **With_Answer** | **30.33%** | **61.95%** | **1.08** | **$0.4571** | **122** |
+| **Without Answer** | **31.15%** | **62.09%** | **1.09** | **$0.4550** | **122** |
+| **With Answer** | **30.33%** | **61.95%** | **1.08** | **$0.4571** | **122** |
+| **With True Solution** | **43.44%** | **70.49%** | **0.81** | **$0.6344** | **122** |
 
 ## Key Findings
 
 ### Performance Characteristics
 - **Average evaluation time**: 23.12s per assessment
-- **Cost efficiency**: $0.9121 total cost for 244 evaluations
+- **Cost efficiency**: $1.5465 total cost for 366 evaluations
 - **Token usage**: ~2560 prompt + 1594 completion tokens per evaluation
 
 ### Model Capabilities
