@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+
+% Required packages for the table
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Page setup
+\geometry{margin=1in}
+
+% Title and author information
+\title{Comprehensive Model Performance Analysis\\
+Russian Math Exam Solutions Benchmark}
+\author{Auto-check-EGE-math Project}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document presents a comprehensive evaluation of seven state-of-the-art vision-language models on the Russian Math Exam Solutions benchmark. The evaluation covers tasks 13-19 with three different evaluation modes: without answer images, with answer images, and with true solution images. Our analysis reveals significant performance differences across models, with OpenAI O4-mini achieving the highest overall quality score of 76.63\%.
+\end{abstract}
+
+\section{Introduction}
+
+The evaluation of vision-language models on mathematical reasoning tasks has become increasingly important as these models are deployed in educational and assessment contexts. This study provides a comprehensive comparison of seven leading models using a standardized benchmark derived from Russian Math Exam solutions.
+
+\section{Methodology}
+
+\subsection{Evaluation Framework}
+
+The benchmark evaluation framework employs three distinct evaluation modes:
+
+\begin{itemize}
+\item \textbf{Without Answer:} Models evaluate solutions without access to answer images
+\item \textbf{With Answer:} Models evaluate solutions with access to answer images
+\item \textbf{With True Solution:} Models evaluate solutions with access to true solution images
+\end{itemize}
+
+\subsection{Metrics}
+
+The evaluation employs several key metrics:
+
+\begin{itemize}
+\item \textbf{Quality Score:} A normalized measure (0-100\%) indicating prediction closeness relative to maximum possible error
+\item \textbf{Accuracy:} Percentage of exact matches between predicted and expected scores
+\item \textbf{Cost per Evaluation:} Average cost in USD per evaluation across all modes
+\end{itemize}
+
+\section{Results}
+
+\subsection{Overall Performance Comparison}
+
+Table~\ref{tab:model_comparison} presents the comprehensive performance comparison across all evaluated models. The results demonstrate clear performance hierarchies and cost-effectiveness trade-offs.
+
+% Include the comprehensive model comparison table
+\input{comprehensive_model_comparison_table.tex}
+
+\subsection{Key Findings}
+
+The evaluation reveals several important findings:
+
+\begin{enumerate}
+\item \textbf{Performance Leader:} OpenAI O4-mini achieves the highest average quality score (76.63\%) and best accuracy (56.56\%) in the "With Answer" evaluation mode.
+
+\item \textbf{Cost-Effectiveness Champion:} Google Gemini 2.0 Flash Lite offers the most cost-effective solution at \$0.000287 per evaluation while maintaining reasonable performance (66.39\% quality score).
+
+\item \textbf{Mode Preferences:} Most models perform best in the "With Answer" mode, suggesting that access to answer images provides valuable context for evaluation.
+
+\item \textbf{Performance Gap:} There is a substantial 14.61 percentage point gap between the best (OpenAI O4-mini: 76.63\%) and worst (Qwen 2.5-VL 32B: 62.02\%) performing models.
+
+\item \textbf{Evaluation Efficiency:} Google Gemini models demonstrate the fastest evaluation times (3-16 seconds average), while OpenAI O4-mini requires longer processing (33-58 seconds average).
+\end{enumerate}
+
+\subsection{Detailed Analysis by Model}
+
+\subsubsection{Top Tier Performance (70\%+ Quality Score)}
+
+The top three models demonstrate superior mathematical reasoning capabilities:
+
+\begin{itemize}
+\item \textbf{OpenAI O4-mini (76.63\%):} Consistently high performance across all modes with the best overall accuracy. Higher cost per evaluation but justified by superior results.
+
+\item \textbf{Google Gemini 2.0 Flash (72.54\%):} Strong performance with excellent cost-effectiveness. Particularly effective in "With Answer" mode.
+
+\item \textbf{Google Gemini 2.5 Flash Preview (70.77\%):} Interestingly performs best in "Without Answer" mode, suggesting strong inherent reasoning capabilities.
+\end{itemize}
+
+\subsubsection{Mid-Tier Performance (65-70\% Quality Score)}
+
+Two models fall into the mid-tier category:
+
+\begin{itemize}
+\item \textbf{Google Gemini 2.0 Flash Lite (66.39\%):} Offers the best cost-performance ratio in the study. Ideal for budget-conscious applications.
+
+\item \textbf{Google Gemini 2.5 Flash Preview (Thinking) (65.37\%):} Despite the "thinking" enhancement, performs slightly below the standard version, possibly due to over-processing.
+\end{itemize}
+
+\subsubsection{Lower Tier Performance (<65\% Quality Score)}
+
+The remaining models show room for improvement:
+
+\begin{itemize}
+\item \textbf{Arcee-AI Spotlight (62.30\%):} Zero cost evaluation but limited performance. Suitable for preliminary screening.
+
+\item \textbf{Qwen 2.5-VL 32B Instruct (62.02\%):} Despite large parameter count, shows modest performance with higher costs.
+\end{itemize}
+
+\section{Implications and Recommendations}
+
+\subsection{For Research Applications}
+
+For research requiring highest accuracy, \textbf{OpenAI O4-mini} is the clear choice despite higher costs. The superior performance justifies the investment for critical applications.
+
+\subsection{For Production Deployments}
+
+For production systems requiring balance of performance and cost, \textbf{Google Gemini 2.0 Flash} offers an optimal compromise with 72.54\% quality score at reasonable cost.
+
+\subsection{For Budget-Constrained Applications}
+
+For applications with strict budget constraints, \textbf{Google Gemini 2.0 Flash Lite} provides the best value proposition with acceptable performance at minimal cost.
+
+\section{Conclusion}
+
+This comprehensive evaluation provides clear guidance for model selection based on specific requirements. The results demonstrate that while OpenAI O4-mini leads in performance, Google's Gemini family offers compelling alternatives across different cost-performance profiles. The evaluation framework and metrics provide a robust foundation for future model comparisons and improvements.
+
+\section{Data Availability}
+
+All evaluation data, analysis scripts, and validation tools are available in the Auto-check-EGE-math repository. The results have been mathematically validated through comprehensive auditing procedures to ensure reliability and reproducibility.
+
+\end{document}

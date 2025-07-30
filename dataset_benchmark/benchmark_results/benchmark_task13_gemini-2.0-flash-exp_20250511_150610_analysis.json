@@ -1,0 +1,64 @@
+{
+  "total_examples": 21,
+  "total_evaluations": 21,
+  "models": {
+    "google/gemini-2.0-flash-exp:free": {
+      "with_true_solution": {
+        "accuracy": 47.61904761904761,
+        "quality_score": 66.66666666666666,
+        "avg_score_distance": 0.6666666666666666,
+        "macro_precision": 57.93650793650793,
+        "macro_recall": 38.888888888888886,
+        "macro_f1": 37.8066378066378,
+        "per_score_metrics": {
+          "0": {
+            "precision": 100.0,
+            "recall": 16.666666666666664,
+            "f1": 28.57142857142857
+          },
+          "1": {
+            "precision": 57.14285714285714,
+            "recall": 80.0,
+            "f1": 66.66666666666666
+          },
+          "2": {
+            "precision": 16.666666666666664,
+            "recall": 20.0,
+            "f1": 18.18181818181818
+          }
+        },
+        "confusion_matrix": {
+          "0": {
+            "0": 1,
+            "1": 2,
+            "2": 3
+          },
+          "1": {
+            "0": 0,
+            "1": 8,
+            "2": 2
+          },
+          "2": {
+            "0": 0,
+            "1": 4,
+            "2": 1
+          }
+        },
+        "evaluations": 21,
+        "avg_evaluation_time": 12.30310352643331,
+        "avg_prompt_tokens": 2594.095238095238,
+        "avg_completion_tokens": 364.85714285714283,
+        "avg_total_tokens": 2958.9523809523807,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "summary": {
+    "avg_evaluation_time": 12.30310352643331,
+    "avg_prompt_tokens": 2594.095238095238,
+    "avg_completion_tokens": 364.85714285714283,
+    "avg_total_tokens": 2958.9523809523807,
+    "total_cost": 0.0,
+    "avg_quality_score": 0.6666666666666666
+  }
+}

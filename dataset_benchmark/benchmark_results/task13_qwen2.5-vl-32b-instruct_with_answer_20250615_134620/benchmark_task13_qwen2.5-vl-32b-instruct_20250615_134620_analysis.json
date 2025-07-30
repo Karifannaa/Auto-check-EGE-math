@@ -1,0 +1,53 @@
+{
+  "total_examples": 3,
+  "total_evaluations": 3,
+  "models": {
+    "qwen/qwen2.5-vl-32b-instruct": {
+      "with_answer": {
+        "accuracy": 33.33333333333333,
+        "quality_score": 66.66666666666666,
+        "avg_score_distance": 0.6666666666666666,
+        "macro_precision": 16.666666666666664,
+        "macro_recall": 50.0,
+        "macro_f1": 25.0,
+        "per_score_metrics": {
+          "1": {
+            "precision": 0,
+            "recall": 0.0,
+            "f1": 0
+          },
+          "2": {
+            "precision": 33.33333333333333,
+            "recall": 100.0,
+            "f1": 50.0
+          }
+        },
+        "confusion_matrix": {
+          "1": {
+            "1": 0,
+            "2": 2
+          },
+          "2": {
+            "1": 0,
+            "2": 1
+          }
+        },
+        "evaluations": 3,
+        "avg_evaluation_time": 22.432198365529377,
+        "avg_prompt_tokens": 3109.0,
+        "avg_completion_tokens": 1530.6666666666667,
+        "avg_total_tokens": 4639.666666666667,
+        "total_cost": 0.012527100000000003
+      }
+    }
+  },
+  "summary": {
+    "avg_evaluation_time": 22.432198365529377,
+    "avg_prompt_tokens": 3109.0,
+    "avg_completion_tokens": 1530.6666666666667,
+    "avg_total_tokens": 4639.666666666667,
+    "total_cost": 0.012527100000000003,
+    "avg_quality_score": 0.6666666666666666
+  },
+  "task_type": "task_13"
+}

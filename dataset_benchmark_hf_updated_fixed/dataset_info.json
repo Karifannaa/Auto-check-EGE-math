@@ -1,0 +1,53 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "solution_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "task_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "example_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "task_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "score": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "parts_count": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "images_with_answer": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "images_without_answer": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "images_with_true_solution": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

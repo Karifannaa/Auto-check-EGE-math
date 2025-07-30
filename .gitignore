@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+.env
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Project specific
+node_modules/
+
+# API Keys and Secrets
+*.key
+*.secret
+*_key.py
+*_secret.py
+
+# Temporary and test files
+temp/
+tmp/
+test_*.py
+*_test.py
+debug_*.py
+
+# Benchmark logs and temporary results
+benchmark_logs/
+*.tmp

@@ -1,0 +1,44 @@
+{
+  "total_examples": 1,
+  "total_evaluations": 1,
+  "models": {
+    "google/gemini-2.0-flash-exp:free": {
+      "with_true_solution": {
+        "accuracy": 100.0,
+        "quality_score": 100.0,
+        "avg_score_distance": 0.0,
+        "macro_precision": 100.0,
+        "macro_recall": 100.0,
+        "macro_f1": 100.0,
+        "per_score_metrics": {
+          "2": {
+            "precision": 100.0,
+            "recall": 100.0,
+            "f1": 100.0
+          }
+        },
+        "confusion_matrix": {
+          "2": {
+            "2": 1
+          }
+        },
+        "evaluations": 1,
+        "avg_evaluation_time": 4.144466161727905,
+        "avg_prompt_tokens": 2568.0,
+        "avg_completion_tokens": 159.0,
+        "avg_total_tokens": 2727.0,
+        "total_cost": 0.0
+      }
+    }
+  },
+  "summary": {
+    "avg_evaluation_time": 4.144466161727905,
+    "avg_prompt_tokens": 2568.0,
+    "avg_completion_tokens": 159.0,
+    "avg_total_tokens": 2727.0,
+    "total_cost": 0.0,
+    "avg_quality_score": 1.0
+  },
+  "task_type": "task_13",
+  "filename": "benchmark_task13_gemini-2.0-flash-exp_20250511_172254.json"
+}

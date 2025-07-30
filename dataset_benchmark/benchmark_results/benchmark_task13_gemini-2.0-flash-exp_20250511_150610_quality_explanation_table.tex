@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\caption{Detailed Explanation of Quality Score Metric}
+\begin{tabular}{p{12cm}}
+\toprule
+\textbf{Quality Score: In-Depth Explanation} \\
+\midrule
+The Quality Score is a normalized measure that indicates how close the model's predictions are to the expected scores, taking into account the maximum possible error for each task type. \\
+\addlinespace
+\textbf{Calculation:} \\
+1. For each prediction, calculate the absolute difference between predicted and expected score \\
+2. Normalize this difference by dividing by the maximum possible score for the task type (for Task 13, max score = 2) \\
+3. Subtract this normalized distance from 1 to get a quality score between 0 and 1 \\
+4. Convert to percentage by multiplying by 100 \\
+\addlinespace
+\textbf{Formula:} Quality Score = 100\% $\times$ (1 - $|$predicted\_score - expected\_score$|$ / max\_possible\_score) \\
+\addlinespace
+\textbf{Example:} \\
+- If predicted = 1, expected = 2, max\_score = 2: \\
+- Quality Score = 100\% $\times$ (1 - $|$1-2$|$/2) = 100\% $\times$ (1 - 0.5) = 50\% \\
+\addlinespace
+\textbf{Interpretation:} \\
+- 100\%: Perfect prediction (predicted = expected) \\
+- 50\%: Prediction off by half the maximum possible error \\
+- 0\%: Prediction off by the maximum possible error \\
+\bottomrule
+\end{tabular}
+\end{table}

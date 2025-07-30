@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Explanation of Benchmark Evaluation Metrics}
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Metric} & \textbf{Explanation} \\
+\midrule
+Accuracy & Percentage of cases where the model's predicted score exactly matches the expected score. Higher is better. \\
+\addlinespace
+Close Accuracy & Percentage of cases where the model's predicted score is within $\pm$1 point of the expected score. Measures near-correctness. Higher is better. \\
+\addlinespace
+Quality Score & Normalized measure (0-100\%) indicating how close predictions are to expected scores relative to the maximum possible error. Calculated as 100\% $\times$ (1 - normalized\_distance). Higher is better. \\
+\addlinespace
+Average Score Distance & Average absolute difference between predicted and expected scores. Lower is better. \\
+\addlinespace
+Macro Precision & Average precision across all score classes. Measures how many of the model's predictions for each score value were correct. Higher is better. \\
+\addlinespace
+Macro Recall & Average recall across all score classes. Measures how many of the actual instances of each score value were correctly identified. Higher is better. \\
+\addlinespace
+Macro F1 & Harmonic mean of precision and recall across all score classes. Balanced measure of model performance. Higher is better. \\
+\addlinespace
+Evaluations & Number of evaluations performed. \\
+\addlinespace
+Average Evaluation Time & Average time in seconds to complete one evaluation. \\
+\addlinespace
+Total Cost & Total cost in USD for all evaluations. \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}

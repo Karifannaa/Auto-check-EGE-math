@@ -1,0 +1,42 @@
+% Comprehensive Model Evaluation Results Table
+% Generated automatically from validated benchmark data
+% Use \input{comprehensive_model_comparison_table.tex} to include in documents
+
+\begin{table}[htbp]
+\centering
+\caption{Comprehensive Model Performance Comparison on Russian Math Exam Solutions Benchmark}
+\label{tab:model_comparison}
+\begin{threeparttable}
+\begin{tabular}{@{}clccccr@{}}
+\toprule
+\textbf{Rank} & \textbf{Model} & \textbf{Avg Quality} & \textbf{Best Mode} & \textbf{Best Accuracy} & \textbf{Cost/Eval} & \textbf{Evaluations} \\
+& & \textbf{Score (\%)} & & \textbf{(\%)} & \textbf{(USD)} & \\
+\midrule
+\textbf{1st} & \textbf{OpenAI O4-mini} & \textbf{76.63} & With Answer & \textbf{56.56} & 0.017689 & 366 \\
+\textbf{2nd} & \textbf{Google Gemini 2.0 Flash} & 72.54 & With Answer & 47.54 & 0.001175 & 244 \\
+\textbf{3rd} & \textbf{Google Gemini 2.5 Flash Preview} & 70.77 & Without Answer & 44.26 & 0.002566 & 244 \\
+\addlinespace
+4th & Google Gemini 2.0 Flash Lite & 66.39 & With Answer & 35.25 & 0.000287 & 244 \\
+5th & Google Gemini 2.5 Flash Preview (Thinking) & 65.37 & With Answer & 42.62 & 0.005014 & 244 \\
+6th & Arcee-AI Spotlight & 62.30 & Without Answer & 27.87 & 0.000000 & 366 \\
+7th & Qwen 2.5-VL 32B Instruct & 62.02 & Without Answer & 31.15 & 0.003738 & 244 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textbf{Quality Score:} Normalized measure (0-100\%) indicating prediction closeness relative to maximum possible error.
+\item \textbf{Best Mode:} Evaluation mode with highest quality score for each model.
+\item \textbf{Best Accuracy:} Accuracy percentage in the best performing evaluation mode.
+\item \textbf{Cost/Eval:} Average cost in USD per evaluation across all modes.
+\item \textbf{Evaluations:} Total number of evaluations performed for the model.
+\item Benchmark covers Russian Math Exam tasks 13-19 with three evaluation modes:
+\item \quad Without Answer, With Answer, and With True Solution.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+% Additional summary statistics
+% Total models evaluated: 7
+% Total evaluations: 1952
+% Best performing model: OpenAI O4-mini (76.63% avg quality)
+% Most cost-effective: Google Gemini 2.0 Flash Lite
