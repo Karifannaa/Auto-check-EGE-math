@@ -8,6 +8,12 @@ This system automatically evaluates student solutions to EGE mathematics problem
 
 **Supported tasks:** Trigonometry, stereometry, logarithms, planimetry, financial mathematics, parameters, and number theory problems.
 
+# EGE Math Solutions Assessment Benchmark
+
+This repository provides a link to the **EGE Math Solutions Assessment Benchmark** dataset, available on Hugging Face.
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/Karifannaa/EGE_Math_Solutions_Assessment_Benchmark)
+
 ## Key Features
 
 - Upload images of student solutions and get automated scores
