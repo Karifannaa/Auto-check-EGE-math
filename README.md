@@ -77,27 +77,9 @@ The project includes a dataset of 122 real student solutions from EGE mathematic
 
 The source code and dataset for this research are available under the MIT License. This permissive license allows for reuse, modification, and distribution, both in academic and commercial settings, provided that the original copyright and license notice are included.
 
-## Contact
-
-- GitHub: [Karifannaa](https://github.com/Karifannaa)
-- Email: ra.khrulev@gmail.com
-- Telegram: @Karifannaa
 
 ## Citation
 
 If you use this work in your research, please consider citing it.
 
-**Plain Text:**
-> Khrulev, R. (2025). *CHECK-MAT: Checking Hand-Written Mathematical Answers for the Russian Unified State Exam*. arXiv preprint arXiv:2507.22958. https://arxiv.org/abs/2507.22958
 
-**BibTeX:**
-```bibtex
-@misc{khrulev2025checkmatcheckinghandwrittenmathematical,
-      title={CHECK-MAT: Checking Hand-Written Mathematical Answers for the Russian Unified State Exam}, 
-      author={Ruslan Khrulev},
-      year={2025},
-      eprint={2507.22958},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2507.22958}, 
-}
